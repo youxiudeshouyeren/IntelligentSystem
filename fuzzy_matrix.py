@@ -310,4 +310,6 @@ if __name__ == '__main__':
     # make_fuzzy_matrix(0 , 1 , 0)
     caculate_matrix()
 
+    print(context)
+
 
