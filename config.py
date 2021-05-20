@@ -28,6 +28,7 @@ class TrustworthinessKnowledge:
 
 #车流量数据表
 class VehicleData:
+    id='id'
     tablename='vehicleData'
     type='type'
     begintime='beginTime'
