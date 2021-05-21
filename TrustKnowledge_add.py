@@ -3,20 +3,11 @@ import datetime
 
 import config
 
-cursor=config.connect.cursor()
-print("*****增加可信度知识*****")
 
-while(1):
-    print("输入#终止")
-    precondition_value=input("输入前提：")
-    if(precondition_value=='#'):
-        break
+def TrustKnowledge_add(precondition_value,conclusion_value, pre_probablity_value, con_probablity_value,use_count_value, last_use_value):
+    cursor=config.connect.cursor()
+    print("*****增加可信度知识*****")
 
-    conclusion_value=input("输入结论：")
-    pre_probablity_value=input("输入前提可信度：")
-    con_probablity_value=input("输入结论可信度：")
-    use_count_value=0
-    last_use_value=datetime.datetime.now().strftime(config.time_format)
 
     sql = '''insert into %s (%s,%s,%s,%s,%s,%s)  
     values ('%s','%s',%f,%f,%d,'%s');
@@ -37,7 +28,21 @@ while(1):
     res= cursor.execute(sql)
     config.connect.commit()
     print("插入成功！" if res==True else "插入失败")
+    cursor.close()
 
 
-cursor.close()
-config.connect.close()
+
+
+if __name__=='__main__':
+    while(1):
+        print("输入#终止")
+        precondition_value=input("输入前提：")
+        if(precondition_value=='#'):
+            break
+
+        conclusion_value=input("输入结论：")
+        pre_probablity_value=input("输入前提可信度：")
+        con_probablity_value=input("输入结论可信度：")
+        use_count_value=0
+        last_use_value=datetime.datetime.now().strftime(config.time_format)
+        TrustKnowledge_add(precondition_value, conclusion_value, pre_probablity_value, con_probablity_value, use_count_value, last_use_value)
