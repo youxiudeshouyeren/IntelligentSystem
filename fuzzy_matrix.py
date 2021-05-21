@@ -309,6 +309,19 @@ def caculate_matrix():
                 context.append(s)
     print(count)
 
+
+def make_knowledge():
+
+    print('请输入知识')
+    print('0：车很少 ， 1：车较少， 2：车少 ， 3：车流正常 ， 4： 车多 ， 5： 车较多 ， 6： 车很多')
+    print('0:变化幅度很小 ， 1： 变化幅度较小 ， 2：变化幅度小 ， 3： 变化幅度大 ， 4： 变化幅度较大 ， 5：变化幅度很大 ')
+
+    index1 = int(input('此时车流量为：'))
+    index2 = int(input('上次车流量为：'))
+    index3 = int(input('绿灯时长变化幅度为：'))
+
+    make_fuzzy_matrix(index1,index2,index3)
+
 if __name__ == '__main__':
     make_least()
     make_less()
