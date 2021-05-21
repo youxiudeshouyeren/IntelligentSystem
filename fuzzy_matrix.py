@@ -1,3 +1,6 @@
+import datetime
+import config
+cursor=config.connect.cursor()
 
 least = [0 for i in range(40)]
 less = [0 for i in range(40)]
@@ -282,8 +285,26 @@ def caculate_matrix():
                 ma = make_fuzzy_matrix(i , j , k-1)
                 count += 1
                 print(ma)
-
+                print('==========================================')
                 # 每一个模糊矩阵都是一个表，可以就命名为matrix+ij
+                tablename = 'matrix' + str(i) + '_' + str(j)
+                sql = '''create table  %s (
+                            id int(10) not null auto_increment,
+                            fuzzyMatrixID int(10) not null,
+                            row int(10) not null,col int(10) not null,
+                            value int(10) not null,
+                            whoUpdata varchar(20),
+                            primary key(id)
+                            );
+                    '''%tablename
+
+                print(sql)
+                res = cursor.execute(sql)
+
+
+                config.connect.commit()
+                # print("创建成功！" if res == True else "创建失败")
+
                 s = '\tCREATE TABLE matrix{}{} ( 属性XXX ) \n'.format(i,j)
                 context.append(s)
     print(count)
@@ -311,5 +332,6 @@ if __name__ == '__main__':
     caculate_matrix()
 
     print(context)
-
+    cursor.close()
+    config.connect.close()
 
