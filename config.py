@@ -35,8 +35,19 @@ class VehicleData:
     endtime='endTime'
     vehiclecount='vehicleCount'
 
-
-
+class fuzzyKnowledge:
+    table_name = 'fuzzyKnowledge'
+    id = 'id'
+    Aid = 'Aid'
+    Bid = 'Bid'
+    Cid = 'Cid'
+    fuzzyMatrixId = 'fuzzyMatrixId'
+    pre_probability = 'pre_probability'
+    con_probability = 'con_probability'
+    updateTime = 'updateTime'
+    whoUpdate = 'whoUpdate'
+    use_count = 'use_count'
+    last_use = 'last_use'
 
 
 
