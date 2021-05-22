@@ -49,6 +49,12 @@ class fuzzyKnowledge:
     use_count = 'use_count'
     last_use = 'last_use'
 
+class allFuzzyMatrix:
+    table_name = 'allFuzzyMatrix'
+    matrixID = 'fuzzyMatrixID'
+    row = 'row'
+    col = 'col'
+    value = 'value'
 
 
 

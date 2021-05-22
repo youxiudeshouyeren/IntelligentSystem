@@ -1,0 +1,20 @@
+ # tablename = 'matrix' + str(i) + '_' + str(j)
+ # sql = '''create table  %s (
+ #             id int(10) not null auto_increment,
+ #             fuzzyMatrixID int(10) not null,
+ #             row int(10) not null,
+ #             col int(10) not null,
+ #             value int(10) not null,
+ #             whoUpdata varchar(20),
+ #             primary key(id)
+ #             );
+ #     '''%tablename
+
+
+
+
+
+
+
+
+

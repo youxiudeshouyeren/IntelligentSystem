@@ -287,23 +287,27 @@ def caculate_matrix():
                 print(ma)
                 print('==========================================')
                 # 每一个模糊矩阵都是一个表，可以就命名为matrix+ij
-                tablename = 'matrix' + str(i) + '_' + str(j)
-                sql = '''create table  %s (
-                            id int(10) not null auto_increment,
-                            fuzzyMatrixID int(10) not null,
-                            row int(10) not null,col int(10) not null,
-                            value int(10) not null,
-                            whoUpdata varchar(20),
-                            primary key(id)
-                            );
-                    '''%tablename
-
-                print(sql)
-                res = cursor.execute(sql)
-
-
-                config.connect.commit()
-                # print("创建成功！" if res == True else "创建失败")
+                rowNum = len(ma)   #模糊矩阵行数
+                colNum = len(ma[0]) #列数
+                print(rowNum,' ',colNum)
+                for x in range(rowNum):
+                    for y in range(colNum):
+                        sql = '''insert into %s (%s,%s,%s,%s)
+                        values ('%d','%d','%d','%d')
+                        ''' % (config.allFuzzyMatrix.table_name,
+                               config.allFuzzyMatrix.matrixID,
+                               config.allFuzzyMatrix.row,
+                               config.allFuzzyMatrix.col,
+                               config.allFuzzyMatrix.value,
+                               int(count),
+                               int(x),
+                               int(y),
+                               int(ma[x][y])
+                               )
+                        print(sql)
+                        res = cursor.execute(sql)
+                        config.connect.commit()
+                        print("插入成功！" if res == True else "插入失败")
 
                 s = '\tCREATE TABLE matrix{}{} ( 属性XXX ) \n'.format(i,j)
                 context.append(s)
