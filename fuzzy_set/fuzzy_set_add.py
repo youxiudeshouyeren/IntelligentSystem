@@ -18,7 +18,7 @@ if __name__ == '__main__':
         updateTime=datetime.datetime.now().strftime(config.time_format)
 
         sql = '''insert into %s (%s,%s,%s,%s,%s,%s,%s)
-        values ('%d','%d', %d, %d, %d,'%d','%s')
+        values ('%d','%d', %d, %d, %d,'%f','%s')
         '''%(config.fuzzySet.table_name,
             config.fuzzySet.fuzzySetId,
             config.fuzzySet.elementId,
