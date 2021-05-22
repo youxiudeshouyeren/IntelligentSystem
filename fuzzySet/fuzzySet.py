@@ -40,14 +40,17 @@ def fuzzy_set_add(fuzzySetId,elementId,pointOrline,leftBound,rightBound,belong):
 """
 def initial_fuzzy_set_table():
 
-    cursor=config.connect.cursor()
-    sql="drop table fuzzySet"
-    res= cursor.execute(sql)
-    connect=config.connect
-    connect.commit()
+    try:
+        cursor=config.connect.cursor()
+        sql="drop table fuzzySet"
+        res= cursor.execute(sql)
+        connect=config.connect
+        connect.commit()
+    except:
+        print("fuzzySet数据表不存在,即将创建")
 
     sql="CREATE TABLE IF NOT EXISTS `fuzzySet` ( \
-        `id` int(10) unsigned NOT NULL,\
+        `id` int(10) unsigned NOT NULL auto_increment,\
         `fuzzySetId` int(10) NOT NULL,\
         `elementId` int(10) NOT NULL,\
         `pointOrline` int(4) NOT NULL,\
@@ -55,8 +58,9 @@ def initial_fuzzy_set_table():
         `rightBound` int(10) NOT NULL,\
         `belong` float NOT NULL,\
         `updateTime` datetime DEFAULT NULL,\
-        `whoUpdate` varchar(20) DEFAULT NULL\
-        ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;"
+        `whoUpdate` varchar(20) DEFAULT NULL,\
+        primary key(id)\
+        ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;"
     res= cursor.execute(sql)
     connect=config.connect
     connect.commit()
