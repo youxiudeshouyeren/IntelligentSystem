@@ -56,7 +56,17 @@ class allFuzzyMatrix:
     col = 'col'
     value = 'value'
 
-
+class fuzzySet:
+    table_name = 'fuzzySet'
+    id="id"
+    fuzzySetId="fuzzySetId"
+    elementId="elementId"
+    pointOrline="pointOrline"
+    leftBound="leftBound"
+    rightBound="rightBound"
+    belong="belong"
+    updateTime="updateTime"
+    whoUpdate="whoUpdate"
 
 
 
