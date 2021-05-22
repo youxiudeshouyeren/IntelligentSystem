@@ -26,7 +26,7 @@ class TrustworthinessKnowledge:
     last_use='last_use'
 
 
-#车流量数据表
+#车流量数据表 存储下位机的信息
 class VehicleData:
     id='id'
     tablename='vehicleData'
@@ -34,6 +34,19 @@ class VehicleData:
     begintime='beginTime'
     endtime='endTime'
     vehiclecount='vehicleCount'
+
+#控制信息表 存储上位机发送的信息
+class ControlData:
+    id='id'
+    tablename='controlData'
+    #东-西方向灯类型 西-东方向 南北方向 北南方向
+    # 0 1 2分别代表红黄绿
+    light_1='light_1'
+    light_2='light_2'
+    light_3='light_3'
+    light_4='light_4'
+    begintime='beginTime'
+    endtime='endTime'
 
 class fuzzyKnowledge:
     table_name = 'fuzzyKnowledge'
