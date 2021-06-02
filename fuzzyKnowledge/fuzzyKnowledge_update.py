@@ -1,7 +1,6 @@
 import datetime
 
-import config
-from fuzzyKnowledge_search import *
+from fuzzyKnowledge.fuzzyKnowledge_search import *
 
 def fuzzyKnowledge_update():
     fuzzyKnowledge_search()

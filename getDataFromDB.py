@@ -1,4 +1,6 @@
 import config
+import time
+import datetime
 #将数据库中数据转化为列表存储
 def getTrustKnowledgeData():   #获取可信度知识库数据
     cursor=config.connect.cursor()
@@ -34,5 +36,13 @@ if __name__ == '__main__':
     print(TrustKnowledge)
     VehicleData = getVehicleData()
     print(type(VehicleData[0][1]))
+    a = VehicleData[0][1]
+    b = VehicleData[0][2]
+    c = b-a
+    c= str(c)
+    print(c)
+    print(type(c))
+    if(c == '0:01:00'):
+        print('yes')
     print(VehicleData)
 

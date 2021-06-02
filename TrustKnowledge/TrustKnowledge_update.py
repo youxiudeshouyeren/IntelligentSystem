@@ -1,7 +1,6 @@
 import datetime
 
-import config
-from TrustKnowledge_search import *
+from TrustKnowledge.TrustKnowledge_search import *
 
 def TrustKnowledge_update():
     cursor=config.connect.cursor()

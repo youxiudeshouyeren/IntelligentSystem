@@ -42,4 +42,5 @@ def vehicleData_delete_by_time(beginTime,endTime):
 
 
 if __name__=='__main__':
-    vehicleData_delete_by_time('2021-05-20 20:00:00','2021-05-02 20:01:02')
+    # vehicleData_delete_by_time('2021-05-20 20:00:00','2021-05-02 20:01:02')
+    vehicleData_delete_all()

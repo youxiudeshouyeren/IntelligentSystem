@@ -35,7 +35,7 @@ def vehicleData_add(type,vehicle_count,datetime_begin,datetime_end):
 
 if __name__=='__main__':
     for i in range(10):
-        type=random.randint(0,3)
+        type= (i % 4) + 1
         vehicle_count=random.randint(10,50)
 
         # 当前时间提前一分钟
