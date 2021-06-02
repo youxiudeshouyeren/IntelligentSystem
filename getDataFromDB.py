@@ -36,13 +36,5 @@ if __name__ == '__main__':
     print(TrustKnowledge)
     VehicleData = getVehicleData()
     print(type(VehicleData[0][1]))
-    a = VehicleData[0][1]
-    b = VehicleData[0][2]
-    c = b-a
-    c= str(c)
-    print(c)
-    print(type(c))
-    if(c == '0:01:00'):
-        print('yes')
-    print(VehicleData)
+
 
