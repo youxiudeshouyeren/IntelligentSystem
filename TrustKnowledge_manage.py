@@ -9,6 +9,7 @@ def TrustKnowledge_search():
         '''%(config.TrustworthinessKnowledge.table_name,
              config.TrustworthinessKnowledge.id)
     res= cursor.execute(sql)
+    sqldata=[]
 
     #成功取回数据则打印
     if(res):
@@ -18,8 +19,10 @@ def TrustKnowledge_search():
 
             cursor.scroll(i, mode="absolute")
             data = cursor.fetchone()
-            print("%s\t\t\t\t%s\t\t\t\t%s\t\t\t\t%s\t\t\t\t%s\t\t\t\t%s\t\t\t\t%s"%(data[0],data[1],data[2],data[3],data[4],data[5],data[6]))
+            #print("%s\t\t\t\t%s\t\t\t\t%s\t\t\t\t%s\t\t\t\t%s\t\t\t\t%s\t\t\t\t%s"%(data[0],data[1],data[2],data[3],data[4],data[5],data[6]))
+            sqldata.append(data)
     cursor.close()
+    return sqldata
 
 if __name__=='__main__':
     TrustKnowledge_search()

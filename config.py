@@ -3,11 +3,16 @@ import datetime
 
 # 连接数据库
 connect = pymysql.Connect(
-    host='114.55.95.14',
+    # host='114.55.95.14',
+    # port=3306,
+    # user='user',
+    # passwd='123456',
+    # db='knowledge',
+    host='localhost',
     port=3306,
-    user='user',
-    passwd='123456',
-    db='knowledge',
+    user='root',
+    passwd='root',
+    db='intelligent',
     charset='utf8'
 )
 
