@@ -1,6 +1,10 @@
 import pymysql.cursors
 import datetime
-
+from PyQt5.QtCore import *
+import sys
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 # 连接数据库
 connect = pymysql.Connect(
     # host='114.55.95.14',

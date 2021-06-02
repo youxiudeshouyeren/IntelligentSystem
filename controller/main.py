@@ -1,12 +1,13 @@
-from PyQt5.QtGui import QStandardItemModel
-import util
-from TrustKnowledge_manage import *
-from UI.main_window.main_window import *
-
-from PyQt5.QtWidgets import QApplication,QMainWindow,QDialog
+from PyQt5.QtWidgets import *
 import sys
 
-from controller.trustknowledge import TrustKnow_window
+sys.path.append('../UI/trustknowledge_page/')
+sys.path.append('../UI/main_window/')
+sys.path.append('../')
+from knowledge_page import *
+from main_window import *
+from trustknowledge import *
+from util import *
 
 
 class parentWindow(QMainWindow):
@@ -16,16 +17,14 @@ class parentWindow(QMainWindow):
         self.main_ui.setupUi(self)
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    window = parentWindow()
+    child = TrustKnow_window()
 
-    app=QApplication(sys.argv)
-    window=parentWindow()
-    child=TrustKnow_window()
-
-    #通过toolButton将两个窗体关联
-    btn=window.main_ui.main_knowledge_btn
+    # 通过toolButton将两个窗体关联
+    btn = window.main_ui.main_knowledge_btn
     btn.clicked.connect(child.show)
-
 
     # 显示
     window.show()

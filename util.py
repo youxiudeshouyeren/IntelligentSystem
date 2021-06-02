@@ -5,6 +5,8 @@ from PyQt5.QtGui import QStandardItem, QColor
 
 
 def load_data_to_table(data,row,column,model):
+    #print(data)
+    model.clear()#先清空
     row=min(row, len(data))
     for i in range(row):
         for j in range(column):
