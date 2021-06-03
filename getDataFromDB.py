@@ -47,8 +47,6 @@ def getFuzzyKnowledgeData():
     result = list(result)
     return result
 
-def getFuzzySet():
-    pass
 
 if __name__ == '__main__':
     TrustKnowledge = getTrustKnowledgeData()

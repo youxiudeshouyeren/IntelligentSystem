@@ -20,18 +20,21 @@ def FuzzyVehicalCount(x):
 
     return result
 
+# 计算交集
 def jiaoji(num1 , num2):
     if(num1 >= num2 ):
         return num2
     else:
         return num1
 
+# 计算并集
 def huoji(num1 , num2):
     if(num1 >= num2):
         return num1
     else:
         return num2
 
+# 得到输入，上两次的车辆数目
 def getCount(type):
     VehicleData = getDataFromDB.getVehicleData()
     count = 0 #上一轮车辆通过数
@@ -97,7 +100,7 @@ def SearchKnowledge():
     kslice = sims.index(max(sims))
     return Evidence,FuzzyKnowledge[kslice][0],FuzzyKnowledge[kslice][1],FuzzyKnowledge[kslice][2]
 
-
+# 计算结论，前提与模糊矩阵相乘
 def CaculateConclusion():
     evidence, index1 ,index2 ,index3 = SearchKnowledge()
     matrix = fuzzy_matrix.make_fuzzy_matrix(index1, index2 ,index3)
@@ -110,6 +113,7 @@ def CaculateConclusion():
 
     return conclusion
 
+# 结论去模糊化
 def Defuzzification():
 
     conclusion = CaculateConclusion()
@@ -117,7 +121,10 @@ def Defuzzification():
     return conclusion.index(max(conclusion))
 
 
+if __name__ == '__main__':
+    conclusion = Defuzzification()
 
+    print(conclusion)
 
 
 
