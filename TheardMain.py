@@ -40,7 +40,7 @@ def TheardMain():
                 # do Nothing
                 print("")
             elif (conclusion[0]=="本轮绿灯时间增加"):
-                wait_time+=wait_time*conclusion[1]
+                wait_time+=wait_time*conclusion[1]*4
             elif conclusion[0]=="本轮绿灯时间减少":
                 wait_time-=wait_time*conclusion[1]
             else:
