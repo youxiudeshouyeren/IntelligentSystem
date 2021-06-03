@@ -25,10 +25,11 @@ class TrustKnow_window(QDialog):
 
     def load_data(self):
         self.model = QStandardItemModel(15, 7)  # 行 列
-        self.model.setHorizontalHeaderLabels(['ID', '前提', '结论', '前提可信度', '结论可信度',
-                                              '使用次数', '上次使用时间'])
+        self.knowledge_tv_header=['ID', '前提', '结论', '前提可信度', '结论可信度',
+                                   '使用次数', '上次使用时间']
+
         data = TrustKnowledge_search()
-        util.load_data_to_table(data, 15, 7, self.model)
+        util.load_data_to_table(self.knowledge_tv_header,data, 15, 7, self.model)
         self.child.knowledge_tv.setModel(self.model)
         self.child.knowledge_tv.resizeColumnsToContents()
 

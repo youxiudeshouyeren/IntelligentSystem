@@ -1,12 +1,13 @@
 # 工具函数库
 
-# 从sql查询结果中读取数据显示到表格上
+
 from PyQt5.QtGui import QStandardItem, QColor
 
-
-def load_data_to_table(data,row,column,model):
+# 从sql查询结果中读取数据显示到表格上
+def load_data_to_table(header,data,row,column,model):
     #print(data)
     model.clear()#先清空
+    model.setHorizontalHeaderLabels(header)
     row=min(row, len(data))
     for i in range(row):
         for j in range(column):
