@@ -8,6 +8,8 @@
     2. `UpperMachine.py`:在上位机运行的文件，用法在`Usage.py`中有展示
     3. `Usage.py`:`UpperMachine`的用法
 
+## 完成了可信度推理机与传感器的相连接
+1. 在 `TheardMain.py` 中有一个未实行线程封装的主函数，调用即可
 ## TO DO：
 ~~（1）隶属函数的创建以及插入~~
 
