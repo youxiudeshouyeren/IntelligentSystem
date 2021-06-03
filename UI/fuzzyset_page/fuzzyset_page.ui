@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>fuzzyset_dialog</class>
+ <widget class="QDialog" name="fuzzyset_dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1058</width>
+    <height>978</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLineEdit" name="fuzzyset_id_le">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>100</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 12pt &quot;宋体&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="fuzzyset_setid_le">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>210</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 12pt &quot;宋体&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="fuzzyset_left_le">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>530</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 12pt &quot;宋体&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>390</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 16pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>点段标识</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>490</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 16pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>左边界</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="fuzzyset_search_btn">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>800</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>查询</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="fuzzyset_delete_btn">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>880</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>删除</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="fuzzyset_eleid_le">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>320</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 12pt &quot;宋体&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="fuzzyset_pointOrline_le">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>430</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 12pt &quot;宋体&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="fuzzyset_add_btn">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>800</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>新增</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="fuzzyset_update_btn">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>880</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>修改</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>280</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 16pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>元素ID</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="fuzzyset_tv">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>641</width>
+     <height>871</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>150</y>
+     <width>191</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 16pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>模糊集ID</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>10</y>
+     <width>171</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 16pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>模糊集库</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>60</y>
+     <width>31</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 16pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>ID</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>590</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 16pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>右边界</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="fuzzyset_right_le">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>630</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 12pt &quot;宋体&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>690</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 16pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>隶属度</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="fuzzyset_belong_le">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>730</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 12pt &quot;宋体&quot;;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
