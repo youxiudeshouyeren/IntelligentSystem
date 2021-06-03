@@ -7,7 +7,11 @@
 
 """
 
+import sys
+sys.path.append('..')
 import _thread
+import config
+import datetime
 import time
 import serial
 class UpperMachine():
@@ -22,6 +26,15 @@ class UpperMachine():
         self.count2 = 0
         self.count3 = 0
         self.count4 = 0
+
+        self.beginTime1=datetime.datetime.now().strftime(config.time_format)
+        self.endTime1=datetime.datetime.now().strftime(config.time_format)
+        self.beginTime2=datetime.datetime.now().strftime(config.time_format)
+        self.endTime2=datetime.datetime.now().strftime(config.time_format)
+        self.beginTime3=datetime.datetime.now().strftime(config.time_format)
+        self.endTime3=datetime.datetime.now().strftime(config.time_format)
+        self.beginTime4=datetime.datetime.now().strftime(config.time_format)
+        self.endTime4=datetime.datetime.now().strftime(config.time_format)
 
         # 各个方向的通行时间
         self.green1_time = 4
@@ -54,6 +67,7 @@ class UpperMachine():
             # 绿黄红
             for i in range(4):
                 time_start = time.time()
+                beginTime=datetime.datetime.now().strftime(config.time_format)
                 temp_num=0
                 str_last = ''
                 str1 = ''
@@ -67,6 +81,8 @@ class UpperMachine():
                             temp_num += 1  # 障碍物加一
                     str_last = str1
 
+                endTime=datetime.datetime.now().strftime(config.time_format)
+                self.changeBETime(i,beginTime,endTime)
                 time_start = time.time()
                 while(time.time() - time_start)<2:
                     self.ser.write(yellow_list[i].to_bytes(length=1, byteorder='big', signed=True))
@@ -74,7 +90,35 @@ class UpperMachine():
                 self.changeCount(i,temp_num)
                 print("index: %d  the number of cars: %d" % (i+1,self.getCount(i)) )
 
+    def changeBETime(self,i,beginTime,endTime):
+        if(i==0):
+            self.beginTime1=beginTime
+            self.endTime1=endTime
+        elif(i==1):
+            self.beginTime2=beginTime
+            self.endTime2=endTime
+        elif(i==2):
+            self.beginTime3=beginTime
+            self.endTime3=endTime
+        else:
+            self.beginTime4=beginTime
+            self.endTime4=endTime
+    
+    def getBETime(self,i):
+        '''
+        返回开始时间和结束时间
+        i的范围是[0-3]
+        '''
 
+        if(i==0):
+            return self.beginTime1,self.endTime1
+        elif(i==1):
+            return self.beginTime2,self.endTime2
+        elif(i==2):
+            return self.beginTime3,self.endTime3
+        else:
+            return self.beginTime4,self.endTime4
+    
     def changeCount(self,i,num):
         if(i==0):
             self.count1=num

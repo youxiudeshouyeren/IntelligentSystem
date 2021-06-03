@@ -13,5 +13,7 @@ if __name__ == '__main__':
     # 如果想获得一个路口经过的车辆数目，使用getCount函数
     time.sleep(5)
     cross1_num=my_upper_machine.getCount(0)
+    beginTime,endTime=my_upper_machine.getBETime(0)
     print("经过路口1的时间为%d " % cross1_num)
+    print("经过时间，开始：%s    结束：%s" % (beginTime,endTime) )
     time.sleep(100)
