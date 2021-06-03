@@ -1,36 +1,40 @@
 import getDataFromDB
 from fuzzyKnowledge import fuzzy_matrix
+import numpy as np
 
 # 对车流量进行模糊化处理
 def FuzzyVehicalCount(x):
     # 按照三角模糊法，取sigma为7
     result = []
     for i in range(40):
-        if(i <= x - 7):
+        if(i <= x - 4):
             result.append(0)
-        elif(i > x -7 and i < x):
-            temp = (i+7-x / 7)
+        elif(i > x -4 and i < x):
+            temp = (i+4-x / 4)
             result.append(temp)
-        elif(i >= x and i < x+7):
-            temp = (x+7-i / 7)
+        elif(i >= x and i < x+4):
+            temp = (x+4-i / 4)
             result.append(temp)
         else:
             result.append(0)
 
     return result
 
+# 计算交集
 def jiaoji(num1 , num2):
     if(num1 >= num2 ):
         return num2
     else:
         return num1
 
+# 计算并集
 def huoji(num1 , num2):
     if(num1 >= num2):
         return num1
     else:
         return num2
 
+# 得到输入，上两次的车辆数目
 def getCount(type):
     VehicleData = getDataFromDB.getVehicleData()
     count = 0 #上一轮车辆通过数
@@ -57,10 +61,9 @@ def CaculateCompose(fk1 , fk2):
 
 # 计算事实模糊化结果和前提的匹配度
 # 有点混乱，暂定
-def CaculateSim(result , id):
+def CaculateSim(result , fuzzy_num):
     Carnum = fuzzy_matrix.ReturnCarnum()
-    i = id - 1
-    fuzzy_num = Carnum[i]
+
     temp1 = []
     temp2 = []
     for i in range(len(fuzzy_num)):
@@ -74,13 +77,54 @@ def CaculateSim(result , id):
 
     return sim
 
+# 寻找匹配度最高的那条知识
 def SearchKnowledge():
 
     FuzzyKnowledge = getDataFromDB.getFuzzyKnowledgeData()
+    Carnum = fuzzy_matrix.ReturnCarnum()
     count1 , count2 = getCount(4)
     fuzzycar1 = FuzzyVehicalCount(count1)
     fuzzycar2 = FuzzyVehicalCount(count2)
     Evidence = CaculateCompose(fuzzycar1,fuzzycar2)
+
+    sims = []
+    for i in range(len(FuzzyKnowledge)):
+        Aid = FuzzyKnowledge[i][0]
+        Bid = FuzzyKnowledge[i][1]
+        Acar = Carnum[Aid - 1]
+        Bcar = Carnum[Bid - 1]
+        premise = CaculateCompose(Acar , Bcar)
+        sim = CaculateSim(Evidence , premise)
+        sims.append(sim)
+
+    kslice = sims.index(max(sims))
+    return Evidence,FuzzyKnowledge[kslice][0],FuzzyKnowledge[kslice][1],FuzzyKnowledge[kslice][2]
+
+# 计算结论，前提与模糊矩阵相乘
+def CaculateConclusion():
+    evidence, index1 ,index2 ,index3 = SearchKnowledge()
+    matrix = fuzzy_matrix.make_fuzzy_matrix(index1, index2 ,index3)
+
+    matrix = np.array(matrix)
+    evidence = np.array(evidence)
+
+    conclusion = evidence @ matrix
+    conclusion = conclusion.tolist()
+
+    return conclusion
+
+# 结论去模糊化
+def Defuzzification():
+
+    conclusion = CaculateConclusion()
+
+    return conclusion.index(max(conclusion))
+
+
+if __name__ == '__main__':
+    conclusion = Defuzzification()
+
+    print(conclusion)
 
 
 
