@@ -112,7 +112,8 @@ class TrustKnow_window(QDialog):
 
     # 刷新左边表格数据
     def table_data_flush(self,sqldata):
+        print("sqldata:")
         print(sqldata)
-        util.load_data_to_table(sqldata, 15, 7, self.model)
+        util.load_data_to_table(self.knowledge_tv_header, sqldata, 15, 7, self.model)
         self.child.knowledge_tv.setModel(self.model)
         self.child.knowledge_tv.resizeColumnsToContents()
