@@ -3,6 +3,8 @@
 # 2.时间段删除
 
 # 删除全部车流量数据 请谨慎操作！！
+import sys
+sys.path.append('..')
 import config
 
 
