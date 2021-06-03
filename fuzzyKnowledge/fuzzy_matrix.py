@@ -16,7 +16,7 @@ context = []
 
 # 车很少
 def make_least():
-    for i in range(1,3):
+    for i in range(0,3):
         least[i] = 1
     for i in range(3,7):
         least[i] = 0.8
@@ -203,6 +203,25 @@ def make_biggest():
         biggest[i] = 0.8
     for i in range(55, 60):
         biggest[i] = 1
+
+def ReturnCarnum():
+    make_least()
+    make_less()
+    make_little()
+    make_normal()
+    make_much()
+    make_more()
+    make_most()
+    Carnum = []
+    Carnum.append(least)
+    Carnum.append(less)
+    Carnum.append(little)
+    Carnum.append(normal)
+    Carnum.append(much)
+    Carnum.append(more)
+    Carnum.append(most)
+
+    return Carnum
 
 fuzzy_matrix = [[0 for i in range(10)] for j in range(10)]
 
