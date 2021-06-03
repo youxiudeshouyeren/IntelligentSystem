@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'knowledge_page.ui'
+# Form implementation generated from reading ui file 'fuzzy_knowledge_page.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #

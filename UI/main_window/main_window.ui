@@ -17,14 +17,27 @@
    <widget class="QPushButton" name="main_knowledge_btn">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>90</x>
       <y>150</y>
-      <width>93</width>
-      <height>28</height>
+      <width>181</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="text">
-     <string>知识维护</string>
+     <string>可信度知识维护</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="main_fuzzyknowledge_btn">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>150</y>
+      <width>171</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>模糊知识维护</string>
     </property>
    </widget>
    <widget class="QPushButton" name="main_fuzzyset_btn">
