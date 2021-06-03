@@ -140,15 +140,13 @@ class TrustKnowledge_add_thread(QThread):
     def __init__(self, data):
         super().__init__()
         self.data = data
-        print('初始化')
 
     def run(self):
-        print('线程运行')
+
         TrustKnowledge_add(self.data[0], self.data[1],
                                  self.data[2], self.data[3], 
                                  self.data[4], self.data[5])
         res=TrustKnowledge_search()
-
         self.sinOut.emit(res)
 
 
@@ -185,5 +183,4 @@ class TrustKnowledge_update_thread(QThread):
                            self.data[4], self.data[5],
                            self.data[6])
         res=TrustKnowledge_search()
-
         self.sinOut.emit(res)

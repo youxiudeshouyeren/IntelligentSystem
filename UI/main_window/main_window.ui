@@ -27,6 +27,19 @@
      <string>知识维护</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="main_fuzzyset_btn">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>170</y>
+      <width>241</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>模糊集维护</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
