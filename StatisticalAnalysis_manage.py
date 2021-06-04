@@ -17,13 +17,16 @@ def StatisticalAnalysis_search_all():
              config.VehicleData.tablename+".endTime",config.time_format,config.ControlData.tablename+".endTime",config.time_format) #倒序查询 保证新数据再最上面
     print(sql)
     res= cursor.execute(sql)
+    data_temp=[]
     #成功取回数据则打印
     if(res):
         temp=cursor.rowcount
         for i in range(temp):
             cursor.scroll(i, mode="absolute")
             data = cursor.fetchone()
+            data_temp.append([data[1],data[2],data[3],data[4],data[6],data[7],data[8],data[9]])
             print(data)
+    return data_temp
     cursor.close()
 
 
@@ -43,8 +46,9 @@ def StatisticalAnalysis_search_by_time(beginTime,endTime):
              config.time_format,
              endTime,
              config.time_format,
-             config.VehicleData.id,) #倒序查询 保证新数据再最上面
+             config.VehicleData.tablename+".beginTime") #倒序查询 保证新数据再最上面
     print(sql)
+    data_temp = []
     res= cursor.execute(sql)
     #成功取回数据则打印
     if(res):
@@ -53,6 +57,10 @@ def StatisticalAnalysis_search_by_time(beginTime,endTime):
             cursor.scroll(i, mode="absolute")
             data = cursor.fetchone()
             print(data)
+            data_temp.append([data[1], data[2], data[3], data[4], data[6], data[7], data[8], data[9]])
+            #id type beginTime endTime vehicleCount
+            #id light_1 light_2 light_3 light_4 beginTime endTime
+    return data_temp
     cursor.close()
 
 if __name__=='__main__':
