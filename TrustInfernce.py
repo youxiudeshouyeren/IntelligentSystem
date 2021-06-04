@@ -70,13 +70,14 @@ def TrustKnowledgeMatch():
         for j in range(len(TrustKnowledge)):
             if(factData[i][0] == TrustKnowledge[j][0]):
                 if(factData[i][1] >= TrustKnowledge[j][3]):
-                    print('知识：',factData[i][0],'匹配成功')
+                    # print('知识：',factData[i][0],'匹配成功')
                     cfH = factData[i][1] * TrustKnowledge[j][2]
                     conclusion = [TrustKnowledge[j][1],cfH]
                     factData.append(conclusion)
 
 def getConclusion(direction):
     count,gapCount = getCount(direction)
+    print("count: %d , gapCount: %d " %(count,gapCount))
     print(count,gapCount)
     getVehicalCountFact(count)
     getGapCountFact(gapCount)
