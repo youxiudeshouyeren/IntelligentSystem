@@ -120,88 +120,88 @@ light_time = []
 
 # 变化幅度很小
 def make_smallest():
-    for i in range(0, 5):
+    for i in range(0, 2):
         smallest[i] = 1
-    for i in range(5, 10):
+    for i in range(2, 5):
         smallest[i] = 0.8
-    for i in range(10, 15):
+    for i in range(5, 7):
         smallest[i] = 0.4
-    for i in range(15, 20):
+    for i in range(7, 10):
         smallest[i] = 0.1
-    for i in range(20, 60):
+    for i in range(10, 30):
         smallest[i] = 0
 
 # 变化幅度较小
 def make_smaller():
-    for i in range(0, 5):
+    for i in range(0, 2):
         smaller[i] = 0
-    for i in range(5, 10):
+    for i in range(2, 5):
         smaller[i] = 0.2
-    for i in range(10, 15):
+    for i in range(5, 7):
         smaller[i] = 0.7
-    for i in range(15, 20):
+    for i in range(7, 10):
         smaller[i] = 1
-    for i in range(20, 25):
+    for i in range(10, 13):
         smaller[i] = 0.7
-    for i in range(25, 30):
+    for i in range(13, 15):
         smaller[i] = 0.2
-    for i in range(30, 60):
+    for i in range(15, 30):
         smaller[i] = 0
 
 # 变化幅度小
 def make_small():
-    for i in range(0, 20):
+    for i in range(0, 10):
         small[i] = 0
-    for i in range(20, 25):
+    for i in range(10, 12):
         small[i] = 0.5
-    for i in range(25, 30):
+    for i in range(12, 15):
         small[i] = 1
-    for i in range(30, 35):
+    for i in range(15, 17):
         small[i] = 0.5
-    for i in range(35, 60):
+    for i in range(17, 30):
         small[i] = 0
 
 # 变化幅度大
 def make_big():
-    for i in range(0, 25):
+    for i in range(0, 12):
         big[i] = 0
-    for i in range(25, 30):
+    for i in range(12, 15):
         big[i] = 0.5
-    for i in range(30, 35):
+    for i in range(15, 17):
         big[i] = 1
-    for i in range(35, 40):
+    for i in range(17, 20):
         big[i] = 0.5
-    for i in range(40, 60):
+    for i in range(20, 30):
         big[i] = 0
 
 # 变化幅度较大
 def make_bigger():
-    for i in range(0, 30):
+    for i in range(0, 15):
         bigger[i] = 0
-    for i in range(30, 35):
+    for i in range(15, 17):
         bigger[i] = 0.2
-    for i in range(35, 40):
+    for i in range(17, 20):
         bigger[i] = 0.7
-    for i in range(40, 45):
+    for i in range(20, 22):
         bigger[i] = 1
-    for i in range(45, 50):
+    for i in range(22, 25):
         bigger[i] = 0.7
-    for i in range(50, 55):
+    for i in range(25, 27):
         bigger[i] = 0.2
-    for i in range(55, 60):
+    for i in range(27, 30):
         bigger[i] = 0
 
 # 变化幅度很大
 def make_biggest():
-    for i in range(0, 40):
+    for i in range(0, 20):
         biggest[i] = 0
-    for i in range(40, 45):
+    for i in range(20, 22):
         biggest[i] = 0.1
-    for i in range(45, 50):
+    for i in range(22, 25):
         biggest[i] = 0.4
-    for i in range(50, 55):
+    for i in range(25, 27):
         biggest[i] = 0.8
-    for i in range(55, 60):
+    for i in range(27, 30):
         biggest[i] = 1
 
 def ReturnCarnum():
@@ -223,6 +223,7 @@ def ReturnCarnum():
 
     return Carnum
 
+
 fuzzy_matrix = [[0 for i in range(10)] for j in range(10)]
 
 def make_car_num():
@@ -241,6 +242,17 @@ def make_light_time():
     light_time.append(big)
     light_time.append(bigger)
     light_time.append(biggest)
+
+def ReturnLightTime(index):
+    make_smallest()
+    make_smaller()
+    make_small()
+    make_big()
+    make_bigger()
+    make_biggest()
+    make_light_time()
+
+    return light_time[index]
 
 def jiaoji(num1 , num2):
     if(num1 >= num2 ):

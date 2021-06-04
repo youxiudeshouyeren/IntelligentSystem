@@ -1,22 +1,23 @@
 import getDataFromDB
 from fuzzyKnowledge import fuzzy_matrix
-# import numpy as np
+import numpy as np
 
 # 对车流量进行模糊化处理
 def FuzzyVehicalCount(x):
     # 按照三角模糊法，取sigma为7
     result = []
     for i in range(40):
-        if(i <= x - 4):
+        if(i <= x - 7):
             result.append(0)
-        elif(i > x -4 and i < x):
-            temp = (i+4-x / 4)
+        elif(i > x -7 and i < x):
+            temp = ((i+7-x) / 7)
             result.append(temp)
-        elif(i >= x and i < x+4):
-            temp = (x+4-i / 4)
+        elif(i >= x and i < x+7):
+            temp = ((x+7-i) / 7)
             result.append(temp)
         else:
             result.append(0)
+    print(result)
 
     return result
 
@@ -78,6 +79,7 @@ def CaculateSim(result , fuzzy_num):
     return sim
 
 # 寻找匹配度最高的那条知识
+# 修改一下计算方法，不用合成证据，因为模糊化效果不好
 def SearchKnowledge():
 
     FuzzyKnowledge = getDataFromDB.getFuzzyKnowledgeData()
@@ -86,6 +88,7 @@ def SearchKnowledge():
     fuzzycar1 = FuzzyVehicalCount(count1)
     fuzzycar2 = FuzzyVehicalCount(count2)
     Evidence = CaculateCompose(fuzzycar1,fuzzycar2)
+    print('evidence' , Evidence)
 
     sims = []
     for i in range(len(FuzzyKnowledge)):
@@ -94,7 +97,9 @@ def SearchKnowledge():
         Acar = Carnum[Aid - 1]
         Bcar = Carnum[Bid - 1]
         premise = CaculateCompose(Acar , Bcar)
-        sim = CaculateSim(Evidence , premise)
+        sim1 = CaculateSim(Acar , fuzzycar1)
+        sim2 = CaculateSim(Bcar , fuzzycar2)
+        sim = sim1+sim2
         sims.append(sim)
 
     kslice = sims.index(max(sims))
@@ -115,14 +120,23 @@ def CaculateConclusion():
     conclusion = evidence @ matrix
     conclusion = conclusion.tolist()
 
+    conclusion = fuzzy_matrix.ReturnLightTime(index3 - 8)
+
     return conclusion
 
 # 结论去模糊化
 def Defuzzification():
 
     conclusion = CaculateConclusion()
+    print(conclusion)
+    maxvalue = max(conclusion)
+    indexs = []
+    for i in range(len(conclusion)):
+        if(conclusion[i] == maxvalue):
+            indexs.append(i)
 
-    return conclusion.index(max(conclusion))
+    return indexs[0]
+
 
 
 if __name__ == '__main__':
