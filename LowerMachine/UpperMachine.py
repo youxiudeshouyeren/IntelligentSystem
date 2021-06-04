@@ -48,7 +48,7 @@ class UpperMachine():
         self.flag=False
 
         # 串口号
-        self.serialPort="COM6"
+        self.serialPort="COM10"
 
         #波特率
         self.baudRate=9600

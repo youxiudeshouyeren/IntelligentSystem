@@ -1,6 +1,5 @@
 import getDataFromDB
 
-inferenceChain = {}   #推理链
 factData = []  #事实库
 
 def getVehicalCountFact(x):   #获取上次车流量产生的事实
