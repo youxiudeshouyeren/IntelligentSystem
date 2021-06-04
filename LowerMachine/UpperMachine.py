@@ -65,11 +65,11 @@ class UpperMachine():
         while True :
             # 发数据
             # 绿黄红
-            for i in range(4):
+            for i in range(2):
                 time_start = time.time()
                 beginTime=datetime.datetime.now().strftime(config.time_format)
                 temp_num=0
-                str_last = ''
+                str_last = 'YES\n'
                 str1 = ''
                 # 进行计数
                 while (time.time() - time_start) < self.getTime(i):

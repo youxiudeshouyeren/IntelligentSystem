@@ -64,9 +64,9 @@ void loop()
 		digitalWrite(yellow2,LOW);
 		digitalWrite(red2,HIGH);
 
-		digitalWrite(green3,LOW);
+		digitalWrite(green3,HIGH);
 		digitalWrite(yellow3,LOW);
-		digitalWrite(red3,HIGH);
+		digitalWrite(red3,LOW);
 
 		digitalWrite(green4,LOW);
 		digitalWrite(yellow4,LOW);
@@ -86,9 +86,9 @@ void loop()
 		digitalWrite(yellow3,LOW);
 		digitalWrite(red3,HIGH);
 
-		digitalWrite(green4,LOW);
+		digitalWrite(green4,HIGH);
 		digitalWrite(yellow4,LOW);
-		digitalWrite(red4,HIGH);
+		digitalWrite(red4,LOW);
 	}
 	else if(accept_num==3)
 	{
@@ -137,8 +137,8 @@ void loop()
 		digitalWrite(red2,HIGH);
 
 		digitalWrite(green3,LOW);
-		digitalWrite(yellow3,LOW);
-		digitalWrite(red3,HIGH);
+		digitalWrite(yellow3,HIGH);
+		digitalWrite(red3,LOW);
 
 		digitalWrite(green4,LOW);
 		digitalWrite(yellow4,LOW);
@@ -159,8 +159,8 @@ void loop()
 		digitalWrite(red3,HIGH);
 
 		digitalWrite(green4,LOW);
-		digitalWrite(yellow4,LOW);
-		digitalWrite(red4,HIGH);
+		digitalWrite(yellow4,HIGH);
+		digitalWrite(red4,LOW);
 	}
 	else if(accept_num==7)
 	{
