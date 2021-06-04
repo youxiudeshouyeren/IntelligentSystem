@@ -39,11 +39,11 @@ class Ui_MainWindow(object):
         self.label.setStyleSheet("\n"
 "font: 20pt \"宋体\";")
         self.label.setObjectName("label")
-        self.main_fuzzyset_btn_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.main_fuzzyset_btn_2.setGeometry(QtCore.QRect(660, 320, 281, 81))
-        self.main_fuzzyset_btn_2.setStyleSheet("\n"
+        self.main_analysis_btn_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.main_analysis_btn_2.setGeometry(QtCore.QRect(660, 320, 281, 81))
+        self.main_analysis_btn_2.setStyleSheet("\n"
 "font: 14pt \"宋体\";")
-        self.main_fuzzyset_btn_2.setObjectName("main_fuzzyset_btn_2")
+        self.main_analysis_btn_2.setObjectName("main_analysis_btn_2")
         self.main_startcollect_btn = QtWidgets.QPushButton(self.centralwidget)
         self.main_startcollect_btn.setGeometry(QtCore.QRect(180, 480, 281, 81))
         self.main_startcollect_btn.setStyleSheet("\n"
@@ -73,7 +73,6 @@ class Ui_MainWindow(object):
         self.main_fuzzyknowledge_btn.setText(_translate("MainWindow", "模糊知识维护"))
         self.main_fuzzyset_btn.setText(_translate("MainWindow", "模糊集维护"))
         self.label.setText(_translate("MainWindow", "智能红绿灯控制系统"))
-        self.main_fuzzyset_btn_2.setText(_translate("MainWindow", "统计分析"))
+        self.main_analysis_btn_2.setText(_translate("MainWindow", "统计分析"))
         self.main_startcollect_btn.setText(_translate("MainWindow", "推理演示"))
         self.main_exc_btn.setText(_translate("MainWindow", "退出系统"))
-

@@ -1,6 +1,14 @@
 from PyQt5.QtWidgets import *
 import sys
 from PyQt5.Qt import *
+
+from UI.main_window.main_window import Ui_MainWindow
+from controller.fuzzyKnowledge import FuzzyKnow_window
+from controller.fuzzyset import FuzzySet_window
+from controller.startCollect import StartCollect_window
+from controller.statisticalanalysis import StatisticalAnalysis_window
+from controller.trustknowledge import TrustKnow_window
+
 sys.path.append('../UI/trustknowledge_page/')
 sys.path.append('../UI/main_window/')
 sys.path.append('../')
@@ -45,6 +53,11 @@ class parentWindow(QMainWindow):
         self.child4=StartCollect_window()
         btn4=self.main_ui.main_startcollect_btn
         btn4.clicked.connect(self.child4.show)
+
+        # 关联统计分析
+        self.child5 = StatisticalAnalysis_window()
+        btn5 = self.main_ui.main_analysis_btn_2
+        btn5.clicked.connect(self.child5.show)
 
         #退出系统按钮
         btn6=self.main_ui.main_exc_btn
