@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>startCollect_dialog</class>
+ <widget class="QDialog" name="startCollect_dialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -64,81 +64,13 @@ font: 14pt &quot;宋体&quot;;</string>
     <string>南北方向</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="radioButton">
+  <widget class="QPushButton" name="startcollect_btn">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>110</y>
+     <x>830</x>
+     <y>100</y>
      <width>161</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-font: 14pt &quot;宋体&quot;;</string>
-   </property>
-   <property name="text">
-    <string>可信度推理机</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_2">
-   <property name="geometry">
-    <rect>
-     <x>600</x>
-     <y>110</y>
-     <width>161</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-font: 14pt &quot;宋体&quot;;</string>
-   </property>
-   <property name="text">
-    <string>模糊推理机</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_3">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>160</y>
-     <width>161</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-font: 14pt &quot;宋体&quot;;</string>
-   </property>
-   <property name="text">
-    <string>可信度推理机</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_4">
-   <property name="geometry">
-    <rect>
-     <x>600</x>
-     <y>160</y>
-     <width>161</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-font: 14pt &quot;宋体&quot;;</string>
-   </property>
-   <property name="text">
-    <string>模糊推理机</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>850</x>
-     <y>120</y>
-     <width>131</width>
-     <height>51</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -302,7 +234,7 @@ font: 14pt &quot;宋体&quot;;</string>
     <string>结束时间</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="ew_vehichecount_le">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -316,7 +248,7 @@ font: 14pt &quot;宋体&quot;;</string>
 font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="sn_vehichecount_le">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -330,7 +262,7 @@ font: 12pt &quot;宋体&quot;;</string>
 font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
-  <widget class="QTextBrowser" name="textBrowser">
+  <widget class="QTextBrowser" name="ew_process_text">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -344,7 +276,7 @@ font: 12pt &quot;宋体&quot;;</string>
 font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
-  <widget class="QTextBrowser" name="textBrowser_2">
+  <widget class="QTextBrowser" name="sn_process_text">
    <property name="geometry">
     <rect>
      <x>660</x>
@@ -392,7 +324,7 @@ font: 14pt &quot;宋体&quot;;</string>
     <string>南北方向推理流程</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="ew_vehiche_begintime_le">
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -406,7 +338,7 @@ font: 14pt &quot;宋体&quot;;</string>
 font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="sn_vehiche_begintime_le">
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -420,7 +352,7 @@ font: 12pt &quot;宋体&quot;;</string>
 font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_5">
+  <widget class="QLineEdit" name="ew_vehiche_endtime_le">
    <property name="geometry">
     <rect>
      <x>550</x>
@@ -434,7 +366,7 @@ font: 12pt &quot;宋体&quot;;</string>
 font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_6">
+  <widget class="QLineEdit" name="sn_vehiche_endtime_le">
    <property name="geometry">
     <rect>
      <x>550</x>
@@ -448,7 +380,7 @@ font: 12pt &quot;宋体&quot;;</string>
 font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_7">
+  <widget class="QLineEdit" name="ew_light_le">
    <property name="geometry">
     <rect>
      <x>710</x>
@@ -462,7 +394,7 @@ font: 12pt &quot;宋体&quot;;</string>
 font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_8">
+  <widget class="QLineEdit" name="sn_light_le">
    <property name="geometry">
     <rect>
      <x>710</x>
@@ -476,7 +408,7 @@ font: 12pt &quot;宋体&quot;;</string>
 font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_9">
+  <widget class="QLineEdit" name="ew_light_begintime_le">
    <property name="geometry">
     <rect>
      <x>830</x>
@@ -490,7 +422,7 @@ font: 12pt &quot;宋体&quot;;</string>
 font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_10">
+  <widget class="QLineEdit" name="sn_light_begintime_le">
    <property name="geometry">
     <rect>
      <x>830</x>
@@ -504,7 +436,7 @@ font: 12pt &quot;宋体&quot;;</string>
 font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_11">
+  <widget class="QLineEdit" name="ew_light_endtime_le">
    <property name="geometry">
     <rect>
      <x>990</x>
@@ -518,7 +450,7 @@ font: 12pt &quot;宋体&quot;;</string>
 font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_12">
+  <widget class="QLineEdit" name="sn_light_endtime_le">
    <property name="geometry">
     <rect>
      <x>990</x>
@@ -530,6 +462,136 @@ font: 12pt &quot;宋体&quot;;</string>
    <property name="styleSheet">
     <string notr="true">
 font: 12pt &quot;宋体&quot;;</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>240</y>
+     <width>841</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>100</y>
+     <width>431</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QRadioButton" name="ew_fuzzy_rbtn">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>10</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+    </property>
+    <property name="text">
+     <string>模糊推理机</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="ew_trust_rbtn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+    </property>
+    <property name="text">
+     <string>可信度推理机</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>160</y>
+     <width>431</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QRadioButton" name="sn_fuzzy_rbtn">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>0</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+    </property>
+    <property name="text">
+     <string>模糊推理机</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="sn_trust_rbtn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+    </property>
+    <property name="text">
+     <string>可信度推理机</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="stopcollect_btn">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>160</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>停止演示</string>
    </property>
   </widget>
  </widget>

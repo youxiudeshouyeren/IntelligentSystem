@@ -6,22 +6,32 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1099</width>
+    <height>713</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="main_knowledge_btn">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>150</y>
-      <width>181</width>
-      <height>131</height>
+      <x>180</x>
+      <y>160</y>
+      <width>281</width>
+      <height>91</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
     </property>
     <property name="text">
      <string>可信度知识维护</string>
@@ -30,11 +40,15 @@
    <widget class="QPushButton" name="main_fuzzyknowledge_btn">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>150</y>
-      <width>171</width>
-      <height>131</height>
+      <x>660</x>
+      <y>160</y>
+      <width>281</width>
+      <height>81</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
     </property>
     <property name="text">
      <string>模糊知识维护</string>
@@ -43,14 +57,86 @@
    <widget class="QPushButton" name="main_fuzzyset_btn">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>170</y>
-      <width>241</width>
-      <height>101</height>
+      <x>180</x>
+      <y>320</y>
+      <width>281</width>
+      <height>81</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
     </property>
     <property name="text">
      <string>模糊集维护</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>20</y>
+      <width>351</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 20pt &quot;宋体&quot;;</string>
+    </property>
+    <property name="text">
+     <string>智能红绿灯控制系统</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="main_fuzzyset_btn_2">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>320</y>
+      <width>281</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+    </property>
+    <property name="text">
+     <string>统计分析</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="main_startcollect_btn">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>480</y>
+      <width>281</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+    </property>
+    <property name="text">
+     <string>推理演示</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="main_exc_btn">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>480</y>
+      <width>281</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+    </property>
+    <property name="text">
+     <string>退出系统</string>
     </property>
    </widget>
   </widget>
@@ -59,13 +145,15 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1099</width>
      <height>26</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="back.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -14,18 +14,49 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(1099, 713)
+        MainWindow.setAutoFillBackground(False)
+        MainWindow.setTabShape(QtWidgets.QTabWidget.Rounded)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.main_knowledge_btn = QtWidgets.QPushButton(self.centralwidget)
-        self.main_knowledge_btn.setGeometry(QtCore.QRect(120, 150, 93, 28))
+        self.main_knowledge_btn.setGeometry(QtCore.QRect(180, 160, 281, 91))
+        self.main_knowledge_btn.setStyleSheet("\n"
+"font: 14pt \"宋体\";")
         self.main_knowledge_btn.setObjectName("main_knowledge_btn")
+        self.main_fuzzyknowledge_btn = QtWidgets.QPushButton(self.centralwidget)
+        self.main_fuzzyknowledge_btn.setGeometry(QtCore.QRect(660, 160, 281, 81))
+        self.main_fuzzyknowledge_btn.setStyleSheet("\n"
+"font: 14pt \"宋体\";")
+        self.main_fuzzyknowledge_btn.setObjectName("main_fuzzyknowledge_btn")
         self.main_fuzzyset_btn = QtWidgets.QPushButton(self.centralwidget)
-        self.main_fuzzyset_btn.setGeometry(QtCore.QRect(400, 170, 241, 101))
+        self.main_fuzzyset_btn.setGeometry(QtCore.QRect(180, 320, 281, 81))
+        self.main_fuzzyset_btn.setStyleSheet("\n"
+"font: 14pt \"宋体\";")
         self.main_fuzzyset_btn.setObjectName("main_fuzzyset_btn")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(420, 20, 351, 61))
+        self.label.setStyleSheet("\n"
+"font: 20pt \"宋体\";")
+        self.label.setObjectName("label")
+        self.main_fuzzyset_btn_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.main_fuzzyset_btn_2.setGeometry(QtCore.QRect(660, 320, 281, 81))
+        self.main_fuzzyset_btn_2.setStyleSheet("\n"
+"font: 14pt \"宋体\";")
+        self.main_fuzzyset_btn_2.setObjectName("main_fuzzyset_btn_2")
+        self.main_startcollect_btn = QtWidgets.QPushButton(self.centralwidget)
+        self.main_startcollect_btn.setGeometry(QtCore.QRect(180, 480, 281, 81))
+        self.main_startcollect_btn.setStyleSheet("\n"
+"font: 14pt \"宋体\";")
+        self.main_startcollect_btn.setObjectName("main_startcollect_btn")
+        self.main_exc_btn = QtWidgets.QPushButton(self.centralwidget)
+        self.main_exc_btn.setGeometry(QtCore.QRect(660, 480, 281, 81))
+        self.main_exc_btn.setStyleSheet("\n"
+"font: 14pt \"宋体\";")
+        self.main_exc_btn.setObjectName("main_exc_btn")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1099, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -38,5 +69,11 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.main_knowledge_btn.setText(_translate("MainWindow", "知识维护"))
+        self.main_knowledge_btn.setText(_translate("MainWindow", "可信度知识维护"))
+        self.main_fuzzyknowledge_btn.setText(_translate("MainWindow", "模糊知识维护"))
         self.main_fuzzyset_btn.setText(_translate("MainWindow", "模糊集维护"))
+        self.label.setText(_translate("MainWindow", "智能红绿灯控制系统"))
+        self.main_fuzzyset_btn_2.setText(_translate("MainWindow", "统计分析"))
+        self.main_startcollect_btn.setText(_translate("MainWindow", "推理演示"))
+        self.main_exc_btn.setText(_translate("MainWindow", "退出系统"))
+
