@@ -76,3 +76,5 @@ if __name__ == '__main__':
     # 显示
     window.show()
     sys.exit(app.exec_())
+
+    
