@@ -1,6 +1,6 @@
 import getDataFromDB
 from fuzzyKnowledge import fuzzy_matrix
-import numpy as np
+# import numpy as np
 
 # 对车流量进行模糊化处理
 def FuzzyVehicalCount(x):
@@ -106,7 +106,11 @@ def CaculateConclusion():
     matrix = fuzzy_matrix.make_fuzzy_matrix(index1, index2 ,index3)
 
     matrix = np.array(matrix)
-    evidence = np.array(evidence)
+    temp = []
+    for i in range(0,40,4):
+        temp.append(evidence[i])
+
+    evidence = np.array(temp)
 
     conclusion = evidence @ matrix
     conclusion = conclusion.tolist()

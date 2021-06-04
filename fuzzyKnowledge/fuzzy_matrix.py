@@ -256,6 +256,23 @@ def huoji(num1 , num2):
 
 # 计算一个模糊矩阵
 def make_fuzzy_matrix(index1 , index2 , index3):
+    make_least()
+    make_less()
+    make_little()
+    make_normal()
+    make_much()
+    make_more()
+    make_most()
+
+    make_smallest()
+    make_smaller()
+    make_small()
+    make_big()
+    make_bigger()
+    make_biggest()
+
+    make_car_num()
+    make_light_time()
 
     now_cars1 = car_num[index1]
     last_cars1 = car_num[index2]
