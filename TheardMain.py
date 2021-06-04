@@ -18,6 +18,9 @@ def TheardMain():
     my_upper_machine.initial()
     my_upper_machine.start()
 
+    STANDARD_SECONDS=10
+    MINI_SECONDS=4
+
     while True:
         for i in range(4):
             # 获取等待时间
@@ -40,9 +43,11 @@ def TheardMain():
                 # do Nothing
                 print("")
             elif (conclusion[0]=="本轮绿灯时间增加"):
-                wait_time+=wait_time*conclusion[1]*4
+                wait_time+=wait_time*conclusion[1]*STANDARD_SECONDS
             elif conclusion[0]=="本轮绿灯时间减少":
-                wait_time-=wait_time*conclusion[1]
+                wait_time-=wait_time*conclusion[1]*STANDARD_SECONDS
+                if wait_time<MINI_SECONDS :
+                    wait_time=MINI_SECONDS
             else:
                 print("Error!")
             my_upper_machine.changeTime(i,wait_time)
