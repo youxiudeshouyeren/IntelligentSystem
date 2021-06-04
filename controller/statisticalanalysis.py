@@ -36,9 +36,10 @@ class StatisticalAnalysis_window(QDialog):
     def search_data_by_time(self):
         print('调用查询')
         id1 = self.child.dateTimeEdit.text()
+        print(id1)
         id2 = self.child.dateTimeEdit_3.text()
-
-        self.search_thread = StatisticalAnalysis_search_by_time(id1,id2)
+        print(id2)
+        self.search_thread = StatisticalAnalysis_search_by_time_thread(id1,id2)
 
         self.search_thread.start()
         self.search_thread.sinOut.connect(self.table_data_flush)

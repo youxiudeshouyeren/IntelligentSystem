@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1010</width>
-    <height>900</height>
+    <width>1040</width>
+    <height>948</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>60</y>
-     <width>121</width>
+     <y>20</y>
+     <width>131</width>
      <height>61</height>
     </rect>
    </property>
@@ -42,8 +42,8 @@ font: 20pt &quot;宋体&quot;;</string>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>80</y>
+     <x>420</x>
+     <y>40</y>
      <width>31</width>
      <height>16</height>
     </rect>
@@ -55,10 +55,10 @@ font: 20pt &quot;宋体&quot;;</string>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>840</x>
-     <y>70</y>
-     <width>131</width>
-     <height>31</height>
+     <x>530</x>
+     <y>120</y>
+     <width>191</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -66,7 +66,7 @@ font: 20pt &quot;宋体&quot;;</string>
 font: 16pt &quot;宋体&quot;;</string>
    </property>
    <property name="text">
-    <string>开始统计</string>
+    <string>点我开始统计</string>
    </property>
   </widget>
   <widget class="QTableView" name="tableView">
@@ -74,7 +74,7 @@ font: 16pt &quot;宋体&quot;;</string>
     <rect>
      <x>40</x>
      <y>240</y>
-     <width>931</width>
+     <width>681</width>
      <height>631</height>
     </rect>
    </property>
@@ -82,7 +82,7 @@ font: 16pt &quot;宋体&quot;;</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>120</x>
      <y>180</y>
      <width>121</width>
      <height>61</height>
@@ -99,7 +99,7 @@ font: 14pt &quot;宋体&quot;;</string>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>620</x>
+     <x>450</x>
      <y>180</y>
      <width>121</width>
      <height>61</height>
@@ -125,10 +125,10 @@ font: 14pt &quot;宋体&quot;;</string>
   <widget class="QDateTimeEdit" name="dateTimeEdit">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>70</y>
-     <width>221</width>
-     <height>31</height>
+     <x>160</x>
+     <y>30</y>
+     <width>241</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -142,10 +142,10 @@ font: 14pt &quot;宋体&quot;;</string>
   <widget class="QDateTimeEdit" name="dateTimeEdit_3">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>70</y>
-     <width>221</width>
-     <height>31</height>
+     <x>470</x>
+     <y>30</y>
+     <width>251</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">

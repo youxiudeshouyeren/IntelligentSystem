@@ -6,7 +6,7 @@
 import sys
 sys.path.append('..')
 import config
-
+from PyQt5.QtCore import *
 
 def StatisticalAnalysis_search_all():
     print('******统计分析数据*****')
@@ -62,6 +62,34 @@ def StatisticalAnalysis_search_by_time(beginTime,endTime):
             #id light_1 light_2 light_3 light_4 beginTime endTime
     return data_temp
     cursor.close()
+
+
+# 更新数据的线程
+class StatisticalAnalysis_search_by_time_thread(QThread):
+    sinOut = pyqtSignal(list)
+
+    def __init__(self, beginTime, endTime):
+        super().__init__()
+        self.beginTime = beginTime
+        self.endTime = endTime
+        print('初始化')
+
+    def run(self):
+        print('线程运行')
+        res = StatisticalAnalysis_search_by_time(self.beginTime, self.endTime)
+        self.sinOut.emit(res)
+
+# 更新数据的线程
+class StatisticalAnalysis_search_all_thread(QThread):
+    sinOut = pyqtSignal(list)
+    def __init__(self):
+        super().__init__()
+        print('初始化')
+
+    def run(self):
+        print('线程运行')
+        res=StatisticalAnalysis_search_all()
+        self.sinOut.emit(res)
 
 if __name__=='__main__':
     StatisticalAnalysis_search_all()
