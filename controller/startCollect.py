@@ -2,7 +2,8 @@ from PyQt5.QtWidgets import QDialog
 import sys
 sys.path.append('../')
 from UI.startcollect_page.startcollect_page import *
-from TheardMain import *
+from machine_main import *
+
 
 #开始演示页面
 class StartCollect_window(QDialog):
@@ -27,7 +28,8 @@ class StartCollect_window(QDialog):
         print(self.ew_machine)
         print(self.sn_machine)
 
-        self.start_thread=TheardMain_thread()
+        # self.start_thread=TheardMain_thread()
+        self.start_thread=Machine_thread(self.ew_machine,self.sn_machine)
         self.start_thread.start()
 
         self.start_thread.sinOut.connect(self.flush_process)
@@ -39,16 +41,27 @@ class StartCollect_window(QDialog):
 
     #刷新GUI
     def flush_process(self,data):
-        print(data)
+        # print(data)
         print('GUI获取数据')
-        self.child.ew_vehichecount_le.setText(str(data[1]))
-        self.child.ew_vehiche_begintime_le.setText(str(data[2]))
-        process_data=' '
-        for i in data[4]:
-            i=[str(j) for j in i]
-            process_data=process_data+' '.join(i)+'\n'
-        print(process_data)
-        
-        self.child.ew_process_text.setText(process_data)
+        #东西方向
+        if(data[0]=='0'):
+            self.child.ew_vehichecount_le.setText(str(data[1]))
+            self.child.ew_vehiche_begintime_le.setText(str(data[2]))
+            self.child.ew_vehiche_endtime_le.setText(str(data[3]))
+            self.child.ew_light_time.setText(str(data[5]))
+            self.child.ew_light_le.setText('红灯')
+            self.child.sn_light_le.setText('绿灯')
+            self.child.ew_process_text.setText(str(data[4]))
+        else:
+            self.child.sn_vehichecount_le.setText(str(data[1]))
+            self.child.sn_vehiche_begintime_le.setText(str(data[2]))
+            self.child.sn_vehiche_endtime_le.setText(str(data[3]))
+            self.child.sn_light_time.setText(str(data[5]))
+            self.child.sn_light_le.setText('红灯')
+            self.child.ew_light_le.setText('绿灯')
+            self.child.sn_process_text.setText(str(data[4]))
+
+
+
 
 

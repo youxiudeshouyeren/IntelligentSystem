@@ -152,7 +152,7 @@ font: 14pt &quot;宋体&quot;;</string>
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>720</x>
+     <x>860</x>
      <y>280</y>
      <width>141</width>
      <height>31</height>
@@ -163,13 +163,13 @@ font: 14pt &quot;宋体&quot;;</string>
 font: 14pt &quot;宋体&quot;;</string>
    </property>
    <property name="text">
-    <string>下阶段信号灯</string>
+    <string>现阶段信号灯</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>410</x>
+     <x>440</x>
      <y>280</y>
      <width>101</width>
      <height>31</height>
@@ -186,43 +186,9 @@ font: 14pt &quot;宋体&quot;;</string>
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>590</x>
+     <x>710</x>
      <y>280</y>
      <width>91</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-font: 14pt &quot;宋体&quot;;</string>
-   </property>
-   <property name="text">
-    <string>结束时间</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_11">
-   <property name="geometry">
-    <rect>
-     <x>920</x>
-     <y>280</y>
-     <width>101</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-font: 14pt &quot;宋体&quot;;</string>
-   </property>
-   <property name="text">
-    <string>开始时间</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_12">
-   <property name="geometry">
-    <rect>
-     <x>1120</x>
-     <y>280</y>
-     <width>141</width>
      <height>31</height>
     </rect>
    </property>
@@ -265,10 +231,10 @@ font: 12pt &quot;宋体&quot;;</string>
   <widget class="QTextBrowser" name="ew_process_text">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>30</x>
      <y>510</y>
-     <width>531</width>
-     <height>281</height>
+     <width>601</width>
+     <height>331</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -279,10 +245,10 @@ font: 12pt &quot;宋体&quot;;</string>
   <widget class="QTextBrowser" name="sn_process_text">
    <property name="geometry">
     <rect>
-     <x>660</x>
+     <x>680</x>
      <y>511</y>
-     <width>541</width>
-     <height>281</height>
+     <width>581</width>
+     <height>331</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -329,13 +295,13 @@ font: 14pt &quot;宋体&quot;;</string>
     <rect>
      <x>370</x>
      <y>320</y>
-     <width>161</width>
+     <width>221</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">
-font: 8pt &quot;宋体&quot;;</string>
+font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="sn_vehiche_begintime_le">
@@ -343,47 +309,47 @@ font: 8pt &quot;宋体&quot;;</string>
     <rect>
      <x>370</x>
      <y>370</y>
-     <width>161</width>
+     <width>221</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">
-font: 8pt &quot;宋体&quot;;</string>
+font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="ew_vehiche_endtime_le">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>650</x>
      <y>320</y>
-     <width>171</width>
+     <width>201</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">
-font: 8pt &quot;宋体&quot;;</string>
+font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="sn_vehiche_endtime_le">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>650</x>
      <y>370</y>
-     <width>171</width>
+     <width>201</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">
-font: 8pt &quot;宋体&quot;;</string>
+font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="ew_light_le">
    <property name="geometry">
     <rect>
-     <x>750</x>
+     <x>890</x>
      <y>320</y>
      <width>71</width>
      <height>31</height>
@@ -397,7 +363,7 @@ font: 12pt &quot;宋体&quot;;</string>
   <widget class="QLineEdit" name="sn_light_le">
    <property name="geometry">
     <rect>
-     <x>750</x>
+     <x>890</x>
      <y>370</y>
      <width>71</width>
      <height>31</height>
@@ -406,62 +372,6 @@ font: 12pt &quot;宋体&quot;;</string>
    <property name="styleSheet">
     <string notr="true">
 font: 12pt &quot;宋体&quot;;</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="ew_light_begintime_le">
-   <property name="geometry">
-    <rect>
-     <x>880</x>
-     <y>320</y>
-     <width>191</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-font: 8pt &quot;宋体&quot;;</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="sn_light_begintime_le">
-   <property name="geometry">
-    <rect>
-     <x>880</x>
-     <y>370</y>
-     <width>191</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-font: 8pt &quot;宋体&quot;;</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="ew_light_endtime_le">
-   <property name="geometry">
-    <rect>
-     <x>1100</x>
-     <y>320</y>
-     <width>171</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-font: 8pt &quot;宋体&quot;;</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="sn_light_endtime_le">
-   <property name="geometry">
-    <rect>
-     <x>1100</x>
-     <y>370</y>
-     <width>171</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-font: 8pt &quot;宋体&quot;;</string>
    </property>
   </widget>
   <widget class="Line" name="line">
@@ -592,6 +502,51 @@ font: 14pt &quot;宋体&quot;;</string>
    </property>
    <property name="text">
     <string>停止演示</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>270</y>
+     <width>191</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>下轮绿灯持续时间</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="ew_light_time">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>320</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 12pt &quot;宋体&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="sn_light_time">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>370</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 12pt &quot;宋体&quot;;</string>
    </property>
   </widget>
  </widget>

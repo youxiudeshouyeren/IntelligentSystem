@@ -12,6 +12,7 @@ import TrustInfernce
 import time
 import datetime
 
+
 class TheardMain_thread(QThread):
     sinOut = pyqtSignal(list)
 
@@ -50,8 +51,9 @@ class TheardMain_thread(QThread):
                 conclusion = TrustInfernce.getConclusion(i+1)
                 print(conclusion)
                 #添加数据
-
-                data.append(TrustInfernce.factData)
+                processdata=TrustInfernce.getInferenceChain()
+                print(processdata)
+                data.append(processdata)
                 TrustInfernce.factData=[]#清空
                 # 根据结论对传感器进行修改
                 # 暂时只用可信度结论进行修改
@@ -66,16 +68,13 @@ class TheardMain_thread(QThread):
                     print("Error!")
                 data.append(str(wait_time))
                 my_upper_machine.changeTime(i,wait_time)
+                print('打印pine')
+                print(data)
                 self.sinOut.emit(data)
 
 
 
 
         
-        
-# if __name__ == '__main__':
-#     TheardMain()
-#
-
 
 

@@ -1,7 +1,9 @@
 from PyQt5.QtWidgets import *
 import sys
 from PyQt5.Qt import *
-
+sys.path.append('../UI/trustknowledge_page/')
+sys.path.append('../UI/main_window/')
+sys.path.append('../')
 from UI.main_window.main_window import Ui_MainWindow
 from controller.fuzzyKnowledge import FuzzyKnow_window
 from controller.fuzzyset import FuzzySet_window
@@ -9,9 +11,7 @@ from controller.startCollect import StartCollect_window
 from controller.statisticalanalysis import StatisticalAnalysis_window
 from controller.trustknowledge import TrustKnow_window
 
-sys.path.append('../UI/trustknowledge_page/')
-sys.path.append('../UI/main_window/')
-sys.path.append('../')
+
 from knowledge_page import *
 from main_window import *
 from trustknowledge import *
