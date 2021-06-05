@@ -66,7 +66,7 @@ def getCount(type):
             elif(gap == 2):
                 gapCount = count - VehicleData[i][3]
                 break
-
+    print('上轮绿灯通过车辆数:',count,'  前两轮车辆通过数量变化：',gapCount)
     return count,gapCount
 Knowledge = []
 def TrustKnowledgeMatch():
@@ -77,7 +77,7 @@ def TrustKnowledgeMatch():
             if(factData[i][0] == TrustKnowledge[j][0]):
                 if(factData[i][1] >= TrustKnowledge[j][3]):
                     # print('知识：',factData[i][0],'匹配成功')
-                    print(TrustKnowledge[j])
+                    # print(TrustKnowledge[j])
                     Knowledge.append(TrustKnowledge[j])
                     cfH = factData[i][1] * TrustKnowledge[j][2]
                     cfH = round(cfH, 2)
@@ -86,8 +86,6 @@ def TrustKnowledgeMatch():
 
 def getConclusion(direction):
     count,gapCount = getCount(direction)
-    print("count: %d , gapCount: %d " %(count,gapCount))
-    print(count,gapCount)
     getVehicalCountFact(count)
     getGapCountFact(gapCount)
     TrustKnowledgeMatch()
@@ -145,17 +143,18 @@ def getInferenceChain():
                 conRight += str(j) + ' '
             conRight += '\n      将事实可信度和知识可信度相乘，产生新的事实为：' + '(' + str(i) + ')' + factData[i][0] + ' 可信度为： ' + str(factData[i][1]) + '\n'
         elif(i==8):
-            conHinge = '将(7)(8)结论进行合成，取可信度高者，若前提不同，可信度最后需要相减：\n\n   生成的结论为：'+factData[i][0] + ' 可信度为： ' + str(factData[i][1]) + '\n'
+            conHinge = '将(6)(7)结论进行合成，取可信度高者，若前提不同，可信度最后需要相减：\n\n   生成的结论为：'+factData[i][0] + ' 可信度为： ' + str(factData[i][1]) + '\n'
 
     InfernceChain += FactLeft + FactRight + conLeft + conRight + conHinge
-
+    factData.clear()
+    Knowledge.clear()
     return InfernceChain
 
 
 
 if __name__ == '__main__':
-    conclusion = getConclusion(0)
-    print(factData)
-    print(conclusion)
+    conclusion = getConclusion(1)
+    # print(factData)
+    # print(conclusion)
     InfernceChain = getInferenceChain()
     print(InfernceChain)
