@@ -26,10 +26,13 @@ class Machine_thread(QThread):
 
 
     #ew是东西方向的推理机  sn是南北方向的推理机
-    def __init__(self,ew,sn):
+    def __init__(self,ew,sn,port,mintime,maxtime):
         super().__init__()
         self.ew=ew
         self.sn=sn
+        self.port=port
+        self.mintime=int(mintime)
+        self.maxtime=int(maxtime)
         print('推理机初始化')
         print(self.ew)
 
@@ -38,13 +41,14 @@ class Machine_thread(QThread):
         
 
         my_upper_machine=UpperMachine.UpperMachine()
-        my_upper_machine.serialPort="COM10"
+
+        my_upper_machine.serialPort=self.port
         my_upper_machine.initial()
         my_upper_machine.start()
 
         STANDARD_SECONDS = 10
-        MINI_SECONDS = 10
-        MAX_SECONDS = 60
+        MINI_SECONDS = self.mintime
+        MAX_SECONDS = self.maxtime
         while True:
            
             for i in range(2):
@@ -74,18 +78,18 @@ class Machine_thread(QThread):
                 print(self.sn)
                 if((i==0 and self.ew=="可信度") or (i==1 and self.sn=="可信度")):
                     # 用可信度推理机进行推理
-                    print('nnnnnnn')
+                    # print('nnnnnnn')
                     conclusion = TrustInfernce.getConclusion(i+1)
                     print(conclusion)
                     if (conclusion[0] == "本轮绿灯时间不变"):
                         # do Nothing
                         print("")
                     elif (conclusion[0] == "本轮绿灯时间增加"):
-                        wait_time += wait_time * conclusion[1] * STANDARD_SECONDS
+                        wait_time += conclusion[1] * STANDARD_SECONDS
                         if wait_time > MAX_SECONDS:
                             wait_time = MAX_SECONDS
                     elif conclusion[0] == "本轮绿灯时间减少":
-                        wait_time -= wait_time * conclusion[1] * STANDARD_SECONDS
+                        wait_time -= conclusion[1] * STANDARD_SECONDS
                         if wait_time < MINI_SECONDS:
                             wait_time = MINI_SECONDS
 

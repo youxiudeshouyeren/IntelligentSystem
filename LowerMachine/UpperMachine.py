@@ -37,10 +37,10 @@ class UpperMachine():
         self.endTime4=datetime.datetime.now().strftime(config.time_format)
 
         # 各个方向的通行时间
-        self.green1_time = 4
-        self.green2_time = 4
-        self.green3_time = 4
-        self.green4_time = 4
+        self.green1_time = 10
+        self.green2_time = 10
+        self.green3_time = 10
+        self.green4_time = 10
 
         # 用以判断是否更新过数据
         # 如果为真，那么表示数据为最新

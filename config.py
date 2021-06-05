@@ -7,18 +7,18 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 # 连接数据库
 connect = pymysql.Connect(
-    # host='114.55.95.14',
-    # port=3306,
-    # user='user',
-    # passwd='123456',
-    # db='knowledge',
-    # charset='utf8'
-    host='localhost',
+    host='114.55.95.14',
     port=3306,
-    user='root',
-    passwd='root',
-    db='intelligent',
+    user='user',
+    passwd='123456',
+    db='knowledge',
     charset='utf8'
+    # host='localhost',
+    # port=3306,
+    # user='root',
+    # passwd='root',
+    # db='intelligent',
+    # charset='utf8'
 )
 
 

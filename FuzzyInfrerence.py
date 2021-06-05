@@ -1,5 +1,4 @@
 import getDataFromDB
-
 import fuzzy_matrix
 import numpy as np
 
@@ -116,19 +115,22 @@ def SearchKnowledge(direction):
     kslice = sims.index(max(sims))
 
     fuzzy_train.append(str(dir[direction])+'方向，使用模糊推理机 本轮车辆数：' + str(count1)+',上轮车辆数：' + str(count2))
-    fuzzy_train.append('使用三角法对车辆数据进行模糊化：\n'+str(fuzzycar1)+'\n'+str(fuzzycar2))
+    # fuzzy_train.append('使用三角法对车辆数据进行模糊化：\n'+str(fuzzycar1)+'\n'+str(fuzzycar2))
+    fuzzy_train.append('使用三角法对车辆数据进行模糊化：')
+
     fuzzy_train.append('求出的最大匹配度为' + str(max(sims)))
-    fuzzy_train.append('计算出合成证据：'+ str(Evidence))
-    if (count1 == count2):
+    # fuzzy_train.append('计算出合成证据：'+ str(Evidence))
+    fuzzy_train.append('计算出合成证据')
+    if (FuzzyKnowledge[kslice][0]== FuzzyKnowledge[kslice][1]):
         fuzzy_train.append('使用第'+str(kslice)+'条知识：' + 'IF x is 当前车辆(x1) ' \
                            +str(car_time[FuzzyKnowledge[kslice][0]])+' &上次车辆(x2)'
                            +str(car_time[FuzzyKnowledge[kslice][1]])+' THEN y is 绿灯时间不变')
-    elif (count1 < count2):
+    elif (FuzzyKnowledge[kslice][0]< FuzzyKnowledge[kslice][1]):
         fuzzy_train.append('使用第' + str(kslice) + '条知识：' + 'IF x is 当前车辆(x1) ' \
                            + str(car_time[FuzzyKnowledge[kslice][0]]) + ' &上次车辆(x2)'
                            + str(car_time[FuzzyKnowledge[kslice][1]]) + ' THEN y is 绿灯时间减少'
                            +str(car_time[FuzzyKnowledge[kslice][2]]))
-    elif (count1 > count2):
+    elif (FuzzyKnowledge[kslice][0]> FuzzyKnowledge[kslice][1]):
         fuzzy_train.append('使用第' + str(kslice) + '条知识：' + 'IF x is 当前车辆(x1) ' \
                            + str(car_time[FuzzyKnowledge[kslice][0]]) + ' &上次车辆(x2)'
                            + str(car_time[FuzzyKnowledge[kslice][1]]) + ' THEN y is 绿灯时间增加'
@@ -160,8 +162,6 @@ def CaculateConclusion(direction):
 
 # 结论去模糊化
 def Defuzzification(direction):
-    global fuzzy_train
-    fuzzy_train=[]
 
     conclusion = CaculateConclusion(direction)
     # print(conclusion)
@@ -192,8 +192,3 @@ if __name__ == '__main__':
     for th in fuzzy_train:
         print(th)
     # CaculateConclusion()
-
-
-
-
-

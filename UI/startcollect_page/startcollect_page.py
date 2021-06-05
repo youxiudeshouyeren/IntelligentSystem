@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_startCollect_dialog(object):
     def setupUi(self, startCollect_dialog):
         startCollect_dialog.setObjectName("startCollect_dialog")
-        startCollect_dialog.resize(1277, 857)
+        startCollect_dialog.resize(1277, 1012)
         self.label = QtWidgets.QLabel(startCollect_dialog)
         self.label.setGeometry(QtCore.QRect(510, 20, 161, 51))
         self.label.setStyleSheet("\n"
@@ -81,22 +81,22 @@ class Ui_startCollect_dialog(object):
 "font: 12pt \"宋体\";")
         self.sn_vehichecount_le.setObjectName("sn_vehichecount_le")
         self.ew_process_text = QtWidgets.QTextBrowser(startCollect_dialog)
-        self.ew_process_text.setGeometry(QtCore.QRect(30, 510, 601, 331))
+        self.ew_process_text.setGeometry(QtCore.QRect(20, 660, 601, 331))
         self.ew_process_text.setStyleSheet("\n"
 "font: 12pt \"宋体\";")
         self.ew_process_text.setObjectName("ew_process_text")
         self.sn_process_text = QtWidgets.QTextBrowser(startCollect_dialog)
-        self.sn_process_text.setGeometry(QtCore.QRect(680, 511, 581, 331))
+        self.sn_process_text.setGeometry(QtCore.QRect(670, 661, 581, 331))
         self.sn_process_text.setStyleSheet("\n"
 "font: 12pt \"宋体\";")
         self.sn_process_text.setObjectName("sn_process_text")
         self.label_13 = QtWidgets.QLabel(startCollect_dialog)
-        self.label_13.setGeometry(QtCore.QRect(240, 470, 231, 21))
+        self.label_13.setGeometry(QtCore.QRect(230, 620, 231, 21))
         self.label_13.setStyleSheet("\n"
 "font: 14pt \"宋体\";")
         self.label_13.setObjectName("label_13")
         self.label_14 = QtWidgets.QLabel(startCollect_dialog)
-        self.label_14.setGeometry(QtCore.QRect(850, 470, 231, 21))
+        self.label_14.setGeometry(QtCore.QRect(840, 620, 231, 21))
         self.label_14.setStyleSheet("\n"
 "font: 14pt \"宋体\";")
         self.label_14.setObjectName("label_14")
@@ -176,15 +176,50 @@ class Ui_startCollect_dialog(object):
 "font: 14pt \"宋体\";")
         self.label_11.setObjectName("label_11")
         self.ew_light_time = QtWidgets.QLineEdit(startCollect_dialog)
-        self.ew_light_time.setGeometry(QtCore.QRect(1050, 320, 101, 31))
+        self.ew_light_time.setGeometry(QtCore.QRect(1060, 320, 91, 31))
         self.ew_light_time.setStyleSheet("\n"
 "font: 12pt \"宋体\";")
         self.ew_light_time.setObjectName("ew_light_time")
         self.sn_light_time = QtWidgets.QLineEdit(startCollect_dialog)
-        self.sn_light_time.setGeometry(QtCore.QRect(1050, 370, 101, 31))
+        self.sn_light_time.setGeometry(QtCore.QRect(1060, 370, 91, 31))
         self.sn_light_time.setStyleSheet("\n"
 "font: 12pt \"宋体\";")
         self.sn_light_time.setObjectName("sn_light_time")
+        self.label_12 = QtWidgets.QLabel(startCollect_dialog)
+        self.label_12.setGeometry(QtCore.QRect(80, 490, 71, 21))
+        self.label_12.setStyleSheet("\n"
+"font: 14pt \"宋体\";")
+        self.label_12.setObjectName("label_12")
+        self.label_15 = QtWidgets.QLabel(startCollect_dialog)
+        self.label_15.setGeometry(QtCore.QRect(200, 490, 81, 21))
+        self.label_15.setStyleSheet("\n"
+"font: 14pt \"宋体\";")
+        self.label_15.setObjectName("label_15")
+        self.label_16 = QtWidgets.QLabel(startCollect_dialog)
+        self.label_16.setGeometry(QtCore.QRect(490, 490, 141, 21))
+        self.label_16.setStyleSheet("\n"
+"font: 14pt \"宋体\";")
+        self.label_16.setObjectName("label_16")
+        self.port_le = QtWidgets.QLineEdit(startCollect_dialog)
+        self.port_le.setGeometry(QtCore.QRect(280, 490, 131, 31))
+        self.port_le.setStyleSheet("\n"
+"font: 12pt \"宋体\";")
+        self.port_le.setObjectName("port_le")
+        self.mintime_le = QtWidgets.QLineEdit(startCollect_dialog)
+        self.mintime_le.setGeometry(QtCore.QRect(650, 490, 131, 31))
+        self.mintime_le.setStyleSheet("\n"
+"font: 12pt \"宋体\";")
+        self.mintime_le.setObjectName("mintime_le")
+        self.label_17 = QtWidgets.QLabel(startCollect_dialog)
+        self.label_17.setGeometry(QtCore.QRect(840, 490, 151, 31))
+        self.label_17.setStyleSheet("\n"
+"font: 14pt \"宋体\";")
+        self.label_17.setObjectName("label_17")
+        self.maxtime_le = QtWidgets.QLineEdit(startCollect_dialog)
+        self.maxtime_le.setGeometry(QtCore.QRect(1020, 490, 121, 31))
+        self.maxtime_le.setStyleSheet("\n"
+"font: 12pt \"宋体\";")
+        self.maxtime_le.setObjectName("maxtime_le")
 
         self.retranslateUi(startCollect_dialog)
         QtCore.QMetaObject.connectSlotsByName(startCollect_dialog)
@@ -211,3 +246,10 @@ class Ui_startCollect_dialog(object):
         self.sn_trust_rbtn.setText(_translate("startCollect_dialog", "可信度推理机"))
         self.stopcollect_btn.setText(_translate("startCollect_dialog", "停止演示"))
         self.label_11.setText(_translate("startCollect_dialog", "下轮绿灯持续时间"))
+        self.label_12.setText(_translate("startCollect_dialog", "设置"))
+        self.label_15.setText(_translate("startCollect_dialog", "串口"))
+        self.label_16.setText(_translate("startCollect_dialog", "最短绿灯时间"))
+        self.port_le.setText(_translate("startCollect_dialog", "COM10"))
+        self.mintime_le.setText(_translate("startCollect_dialog", "10"))
+        self.label_17.setText(_translate("startCollect_dialog", "最长绿灯时间"))
+        self.maxtime_le.setText(_translate("startCollect_dialog", "30"))

@@ -29,13 +29,17 @@ class StartCollect_window(QDialog):
         print(self.sn_machine)
 
         # self.start_thread=TheardMain_thread()
-        self.start_thread=Machine_thread(self.ew_machine,self.sn_machine)
+        self.port=self.child.port_le.text()
+        self.min_time=self.child.mintime_le.text()
+        self.max_time=self.child.maxtime_le.text()
+        self.start_thread=Machine_thread(self.ew_machine,self.sn_machine,self.port,self.min_time,self.max_time)
         self.start_thread.start()
 
         self.start_thread.sinOut.connect(self.flush_process)
         
 
     def stop_collect(self):
+        # self.start_thread.stop_thra()
         print('停止演示')
 
 
