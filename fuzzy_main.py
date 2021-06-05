@@ -60,7 +60,7 @@ def TheardMain():
             elif i == 1:
                 # 用模糊推理机进行推理
                 count1, count2 = FuzzyInfrerence.getCount(i)
-                conclusion, fuzzy_train = FuzzyInfrerence.Defuzzification()
+                conclusion, fuzzy_train = FuzzyInfrerence.Defuzzification(i)
                 # print(count1, count2)
                 # print(fuzzy_train)
                 for th in fuzzy_train:

@@ -87,11 +87,11 @@ def CaculateSim(result , fuzzy_num):
 
 # 寻找匹配度最高的那条知识
 # 修改一下计算方法，不用合成证据，因为模糊化效果不好
-def SearchKnowledge():
+def SearchKnowledge(derection):
 
     FuzzyKnowledge = getDataFromDB.getFuzzyKnowledgeData()
     Carnum = fuzzy_matrix.ReturnCarnum()
-    count1 , count2 = getCount(1)
+    count1 , count2 = getCount(derection)
     fuzzycar1 = FuzzyVehicalCount(count1)
     fuzzycar2 = FuzzyVehicalCount(count2)
     Evidence = CaculateCompose(fuzzycar1,fuzzycar2)
@@ -131,8 +131,8 @@ def SearchKnowledge():
     return Evidence,FuzzyKnowledge[kslice][0],FuzzyKnowledge[kslice][1],FuzzyKnowledge[kslice][2]
 
 # 计算结论，前提与模糊矩阵相乘
-def CaculateConclusion():
-    evidence, index1 ,index2 ,index3 = SearchKnowledge()
+def CaculateConclusion(derection):
+    evidence, index1 ,index2 ,index3 = SearchKnowledge(derection)
     matrix = fuzzy_matrix.make_fuzzy_matrix(index1-1, index2-1 ,index3-8)
     # print(index1-1 , index2-1 ,index3-8)
 
@@ -154,9 +154,9 @@ def CaculateConclusion():
 
 
 # 结论去模糊化
-def Defuzzification():
+def Defuzzification(derection):
 
-    conclusion = CaculateConclusion()
+    conclusion = CaculateConclusion(derection)
     # print(conclusion)
     maxvalue = max(conclusion)
     indexs = []
@@ -172,7 +172,7 @@ if __name__ == '__main__':
 
     count1 , count2 = getCount(1)
     print(count1, count2)
-    conclusion = Defuzzification()
+    conclusion,fuzzy_train = Defuzzification(1)
     if(count1 == count2 or conclusion==0):
         print('不变')
     elif(count1 < count2):
