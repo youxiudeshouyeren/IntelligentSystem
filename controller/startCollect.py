@@ -1,5 +1,9 @@
 from PyQt5.QtWidgets import QDialog
 import sys
+import matplotlib.pyplot as plt
+import start_show
+import showVehicle
+
 sys.path.append('../')
 from UI.startcollect_page.startcollect_page import *
 from machine_main import *
@@ -8,7 +12,9 @@ from machine_main import *
 #开始演示页面
 class StartCollect_window(QDialog):
     def __init__(self):
+
         QDialog.__init__(self)
+       
         self.child = Ui_startCollect_dialog()
         self.child.setupUi(self)
 
@@ -18,6 +24,12 @@ class StartCollect_window(QDialog):
 
 
     def start_collect(self):
+        # self.vehicleShow=showVehicle.win()
+
+        self.weShow =start_show.StartShow(1)
+        self.nsShow = start_show.StartShow(2)
+
+
 
 
         self.ew_machine=("可信度" if self.child.ew_trust_rbtn.isChecked() else "模糊")
@@ -36,19 +48,26 @@ class StartCollect_window(QDialog):
         self.start_thread.start()
 
         self.start_thread.sinOut.connect(self.flush_process)
-        
+
 
     def stop_collect(self):
         # self.start_thread.stop_thra()
         print('停止演示')
 
+    def time_data1(time_sj):                #传入单个时间比如'2019-8-01 00:00:00'，类型为str
+        data_sj = time.strptime(time_sj,"%Y-%m-%d %H:%M:%S")       #定义格式
+        time_int = int(time.mktime(data_sj))
+        return time_int             #返回传入时间的时间戳，类型为int
 
     #刷新GUI
     def flush_process(self,data):
-        # print(data)
+        print("flush_process")
+        print(data)
         print('GUI获取数据')
         #东西方向
+
         if(data[0]=='0'):
+            # self.vehicleShow.direction=0
             self.child.ew_vehichecount_le.setText(str(data[1]))
             self.child.ew_vehiche_begintime_le.setText(str(data[2]))
             self.child.ew_vehiche_endtime_le.setText(str(data[3]))
@@ -57,6 +76,7 @@ class StartCollect_window(QDialog):
             self.child.sn_light_le.setText('绿灯')
             self.child.ew_process_text.setText(str(data[4]))
         else:
+            # self.vehicleShow.direction=1
             self.child.sn_vehichecount_le.setText(str(data[1]))
             self.child.sn_vehiche_begintime_le.setText(str(data[2]))
             self.child.sn_vehiche_endtime_le.setText(str(data[3]))
@@ -64,8 +84,28 @@ class StartCollect_window(QDialog):
             self.child.sn_light_le.setText('红灯')
             self.child.ew_light_le.setText('绿灯')
             self.child.sn_process_text.setText(str(data[4]))
-
-
-
-
-
+        print("ui show")
+        print(str(data[2]))
+        if (data[0] == '0'):
+            timeArray = time.strptime(str(data[2]), "%Y-%m-%d %H:%M:%S")
+            timeStamp = int(time.mktime(timeArray))#1524822540
+            ftime = timeStamp/10
+            print("ftime")
+            print(ftime)
+            print("data[1]")
+            print(data[1])
+            print("data[5]")
+            print(data[5])
+            self.weShow.add_data(int(ftime),data[1],int(data[5]))
+        else:
+            timeArray = time.strptime(str(data[2]), "%Y-%m-%d %H:%M:%S")
+            timeStamp = int(time.mktime(timeArray))#1524822540
+            ftime = timeStamp/10
+            print("else")
+            print("ftime")
+            print(ftime)
+            print("data[1]")
+            print(data[1])
+            print("data[5]")
+            print(data[5])
+            self.nsShow.add_data(int(ftime), data[1],int(data[5]))

@@ -14,10 +14,16 @@ import config
 import datetime
 import time
 import serial
+
+vehicleCount=0 #全局变量 用于实时刷新
+
+
 class UpperMachine():
     """"""
 
     def __init__(self):
+
+
 
         # 按东南西北的顺序
         # 各个方向的车辆数目
@@ -60,6 +66,7 @@ class UpperMachine():
         self.ser=serial.Serial(self.serialPort, self.baudRate) # 连接串口
 
     def SentMessage(self):
+        global  vehicleCount
         accept_nums=[1,2,3,4]
         yellow_list=[5,6,7,8]
         while True :
@@ -79,6 +86,7 @@ class UpperMachine():
                     if (str1 == b'YES\n'):
                         if str_last != str1:  # 有障碍物
                             temp_num += 1  # 障碍物加一
+                            vehicleCount=temp_num # 获取实时车辆数据
                     str_last = str1
 
                 endTime=datetime.datetime.now().strftime(config.time_format)

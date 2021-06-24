@@ -13,6 +13,7 @@ dir=['东西','南北']
 
 # 对车流量进行模糊化处理
 def FuzzyVehicalCount(x):
+    global fuzzy_train
     fuzzy_train = []
     # 按照三角模糊法，取sigma为7
     result = []

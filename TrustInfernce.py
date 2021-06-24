@@ -121,6 +121,8 @@ def getConclusion(direction):
 def getInferenceChain():
     InfernceChain = '获取到的事实为：' + '\n'
     if len(factData) != 9:
+        factData.clear()
+        Knowledge.clear()
         return '本轮知识未匹配，绿灯时间不变'
     FactLeft = ''
     FactRight = ''
