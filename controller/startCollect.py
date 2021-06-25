@@ -3,7 +3,8 @@ import sys
 import matplotlib.pyplot as plt
 import start_show
 import showVehicle
-
+import matplotlib
+matplotlib.use("Qt5Agg")  # 声明使用QT5
 sys.path.append('../')
 from UI.startcollect_page.startcollect_page import *
 from machine_main import *
@@ -12,7 +13,8 @@ from machine_main import *
 #开始演示页面
 class StartCollect_window(QDialog):
     def __init__(self):
-
+        self.lineShow =start_show.StartShow()
+        self.vehicleShow=showVehicle.win()
         QDialog.__init__(self)
        
         self.child = Ui_startCollect_dialog()
@@ -24,10 +26,10 @@ class StartCollect_window(QDialog):
 
 
     def start_collect(self):
-        # self.vehicleShow=showVehicle.win()
 
-        self.weShow =start_show.StartShow(1)
-        self.nsShow = start_show.StartShow(2)
+
+
+       
 
 
 
@@ -67,7 +69,7 @@ class StartCollect_window(QDialog):
         #东西方向
 
         if(data[0]=='0'):
-            # self.vehicleShow.direction=0
+            self.vehicleShow.direction=0
             self.child.ew_vehichecount_le.setText(str(data[1]))
             self.child.ew_vehiche_begintime_le.setText(str(data[2]))
             self.child.ew_vehiche_endtime_le.setText(str(data[3]))
@@ -76,7 +78,7 @@ class StartCollect_window(QDialog):
             self.child.sn_light_le.setText('绿灯')
             self.child.ew_process_text.setText(str(data[4]))
         else:
-            # self.vehicleShow.direction=1
+            self.vehicleShow.direction=1
             self.child.sn_vehichecount_le.setText(str(data[1]))
             self.child.sn_vehiche_begintime_le.setText(str(data[2]))
             self.child.sn_vehiche_endtime_le.setText(str(data[3]))
@@ -96,7 +98,7 @@ class StartCollect_window(QDialog):
             print(data[1])
             print("data[5]")
             print(data[5])
-            self.weShow.add_data(int(ftime),data[1],int(data[5]))
+            self.lineShow.add_data(1,int(ftime), int(data[1]),int(data[5]))
         else:
             timeArray = time.strptime(str(data[2]), "%Y-%m-%d %H:%M:%S")
             timeStamp = int(time.mktime(timeArray))#1524822540
@@ -108,4 +110,4 @@ class StartCollect_window(QDialog):
             print(data[1])
             print("data[5]")
             print(data[5])
-            self.nsShow.add_data(int(ftime), data[1],int(data[5]))
+            self.lineShow.add_data(2,int(ftime), int(data[1]),int(data[5]))
