@@ -14,9 +14,12 @@ from UI.fuzzyKnowledge.fuzzy_knowledge_page import *
 # 可行度知识库页面设计
 class StatisticalAnalysis_window(QDialog):
     def __init__(self):
+        self.sqldata=[]
         QDialog.__init__(self)
         self.child = Ui_StatisticalAnalysis()
         self.child.setupUi(self)
+
+        self.interval=self.child.time_le.text()
 
         self.load_data()
 
@@ -34,21 +37,27 @@ class StatisticalAnalysis_window(QDialog):
 
     # 点击查询按钮
     def search_data_by_time(self):
+        self.interval = self.child.time_le.text()
         print('调用查询')
         id1 = self.child.dateTimeEdit.text()
         print(id1)
         id2 = self.child.dateTimeEdit_3.text()
         print(id2)
-        self.search_thread = StatisticalAnalysis_search_by_time_thread(id1,id2)
 
-        self.search_thread.start()
-        self.search_thread.sinOut.connect(self.table_data_flush)
+        left=id1
+        right=id2
+        while left<right:
+            self.search_thread = StatisticalAnalysis_search_by_time_thread(left, right)
+            self.search_thread.start()
+            self.search_thread.sinOut.connect(self.table_data_flush)
+            left=left+self.interval
 
 
     # 刷新左边表格数据
     def table_data_flush(self, sqldata):
         print("sqldata:")
-        print(sqldata)
-        util.load_data_to_table(self.knowledge_tv_header,sqldata, 50, 8, self.model)
+        self.sqldata=self.sqldata+sqldata
+        print(self.sqldata)
+        util.load_data_to_table(self.knowledge_tv_header,self.sqldata, 50, 8, self.model)
         self.child.tableView.setModel(self.model)
         self.child.tableView.resizeColumnsToContents()
