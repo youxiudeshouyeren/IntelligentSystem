@@ -67,7 +67,7 @@ font: 14pt &quot;宋体&quot;;</string>
   <widget class="QPushButton" name="startcollect_btn">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>1090</x>
      <y>100</y>
      <width>161</width>
      <height>41</height>
@@ -490,7 +490,7 @@ font: 14pt &quot;宋体&quot;;</string>
   <widget class="QPushButton" name="stopcollect_btn">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>1090</x>
      <y>160</y>
      <width>161</width>
      <height>41</height>
@@ -666,6 +666,73 @@ font: 12pt &quot;宋体&quot;;</string>
    </property>
    <property name="text">
     <string>30</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>840</x>
+     <y>110</y>
+     <width>191</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QRadioButton" name="low_rbtn">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>161</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+    </property>
+    <property name="text">
+     <string>下位机</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="bd_rbtn">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>50</y>
+      <width>141</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+    </property>
+    <property name="text">
+     <string>百度api</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_18">
+   <property name="geometry">
+    <rect>
+     <x>850</x>
+     <y>60</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 14pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>数据来源</string>
    </property>
   </widget>
  </widget>

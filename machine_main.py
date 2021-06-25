@@ -26,13 +26,14 @@ class Machine_thread(QThread):
 
 
     #ew是东西方向的推理机  sn是南北方向的推理机
-    def __init__(self,ew,sn,port,mintime,maxtime):
+    def __init__(self,ew,sn,port,mintime,maxtime,dataSourse):
         super().__init__()
         self.ew=ew
         self.sn=sn
         self.port=port
         self.mintime=int(mintime)
         self.maxtime=int(maxtime)
+        self.dataSourse=dataSourse
         print('推理机初始化')
         print(self.ew)
 
@@ -40,7 +41,7 @@ class Machine_thread(QThread):
     def run(self):
         
 
-        my_upper_machine=UpperMachine.UpperMachine()
+        my_upper_machine=UpperMachine.UpperMachine(self.dataSourse)
 
         my_upper_machine.serialPort=self.port
         my_upper_machine.initial()

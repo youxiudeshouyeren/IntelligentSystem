@@ -6,7 +6,7 @@
 详情用法请看底下的main函数
 
 """
-
+import baiduVehicle
 import sys
 sys.path.append('..')
 import _thread
@@ -14,6 +14,7 @@ import config
 import datetime
 import time
 import serial
+import baiduVehicle
 
 vehicleCount=0 #全局变量 用于实时刷新
 
@@ -21,12 +22,13 @@ vehicleCount=0 #全局变量 用于实时刷新
 class UpperMachine():
     """"""
 
-    def __init__(self):
+    def __init__(self,dataSourse):
 
 
 
         # 按东南西北的顺序
         # 各个方向的车辆数目
+        self.dataSourse=dataSourse
 
         self.count1 = 0
         self.count2 = 0
@@ -54,7 +56,7 @@ class UpperMachine():
         self.flag=False
 
         # 串口号
-        self.serialPort="COM6"
+        self.serialPort="COM10"
 
         #波特率
         self.baudRate=9600
@@ -79,15 +81,26 @@ class UpperMachine():
                 str_last = 'YES\n'
                 str1 = ''
                 # 进行计数
-                while (time.time() - time_start) < self.getTime(i):
-                    self.ser.write(accept_nums[i].to_bytes(length=1, byteorder='big', signed=True))  # 持续发送信息
-                    str1 = self.ser.readline()
-                    # print('south_north '+str(str1))
-                    if (str1 == b'YES\n'):
-                        if str_last != str1:  # 有障碍物
-                            temp_num += 1  # 障碍物加一
-                            vehicleCount=temp_num # 获取实时车辆数据
-                    str_last = str1
+                if self.dataSourse=='low':
+                    while (time.time() - time_start) < self.getTime(i):
+                        self.ser.write(accept_nums[i].to_bytes(length=1, byteorder='big', signed=True))  # 持续发送信息
+                        str1 = self.ser.readline()
+                        # print('south_north '+str(str1))
+                        if (str1 == b'YES\n'):
+                            if str_last != str1:  # 有障碍物
+                                temp_num += 1  # 障碍物加一
+                                vehicleCount=temp_num # 获取实时车辆数据
+                        str_last = str1
+                else:
+                    status=baiduVehicle.StartShow()
+                    ns,we=status.get_status()
+                    count=ns if i==0 else we
+                    # print(ns,we)
+                    while (time.time() - time_start) < self.getTime(i):
+                        timeScale=self.getTime(i)
+                        temp_num=int((time.time() - time_start)/timeScale*count)
+                        vehicleCount=temp_num
+
 
                 endTime=datetime.datetime.now().strftime(config.time_format)
                 self.changeBETime(i,beginTime,endTime)
@@ -111,7 +124,7 @@ class UpperMachine():
         else:
             self.beginTime4=beginTime
             self.endTime4=endTime
-    
+
     def getBETime(self,i):
         '''
         返回开始时间和结束时间
@@ -126,7 +139,7 @@ class UpperMachine():
             return self.beginTime3,self.endTime3
         else:
             return self.beginTime4,self.endTime4
-    
+
     def changeCount(self,i,num):
         if(i==0):
             self.count1=num
@@ -182,7 +195,7 @@ class UpperMachine():
 
 if __name__ == '__main__':
 
-    my_upper_machine=UpperMachine()
+    my_upper_machine=UpperMachine('baidu')
     my_upper_machine.initial()
     my_upper_machine.start()
 

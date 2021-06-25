@@ -31,7 +31,7 @@ class Ui_startCollect_dialog(object):
 "font: 14pt \"宋体\";")
         self.label_3.setObjectName("label_3")
         self.startcollect_btn = QtWidgets.QPushButton(startCollect_dialog)
-        self.startcollect_btn.setGeometry(QtCore.QRect(830, 100, 161, 41))
+        self.startcollect_btn.setGeometry(QtCore.QRect(1090, 100, 161, 41))
         self.startcollect_btn.setStyleSheet("\n"
 "font: 14pt \"宋体\";")
         self.startcollect_btn.setObjectName("startcollect_btn")
@@ -166,7 +166,7 @@ class Ui_startCollect_dialog(object):
         self.sn_trust_rbtn.setChecked(True)
         self.sn_trust_rbtn.setObjectName("sn_trust_rbtn")
         self.stopcollect_btn = QtWidgets.QPushButton(startCollect_dialog)
-        self.stopcollect_btn.setGeometry(QtCore.QRect(830, 160, 161, 41))
+        self.stopcollect_btn.setGeometry(QtCore.QRect(1090, 160, 161, 41))
         self.stopcollect_btn.setStyleSheet("\n"
 "font: 14pt \"宋体\";")
         self.stopcollect_btn.setObjectName("stopcollect_btn")
@@ -220,6 +220,26 @@ class Ui_startCollect_dialog(object):
         self.maxtime_le.setStyleSheet("\n"
 "font: 12pt \"宋体\";")
         self.maxtime_le.setObjectName("maxtime_le")
+        self.groupBox_3 = QtWidgets.QGroupBox(startCollect_dialog)
+        self.groupBox_3.setGeometry(QtCore.QRect(840, 110, 191, 91))
+        self.groupBox_3.setTitle("")
+        self.groupBox_3.setObjectName("groupBox_3")
+        self.low_rbtn = QtWidgets.QRadioButton(self.groupBox_3)
+        self.low_rbtn.setGeometry(QtCore.QRect(0, 0, 161, 19))
+        self.low_rbtn.setStyleSheet("\n"
+"font: 14pt \"宋体\";")
+        self.low_rbtn.setChecked(True)
+        self.low_rbtn.setObjectName("low_rbtn")
+        self.bd_rbtn = QtWidgets.QRadioButton(self.groupBox_3)
+        self.bd_rbtn.setGeometry(QtCore.QRect(0, 50, 141, 19))
+        self.bd_rbtn.setStyleSheet("\n"
+"font: 14pt \"宋体\";")
+        self.bd_rbtn.setObjectName("bd_rbtn")
+        self.label_18 = QtWidgets.QLabel(startCollect_dialog)
+        self.label_18.setGeometry(QtCore.QRect(850, 60, 101, 31))
+        self.label_18.setStyleSheet("\n"
+"font: 14pt \"宋体\";")
+        self.label_18.setObjectName("label_18")
 
         self.retranslateUi(startCollect_dialog)
         QtCore.QMetaObject.connectSlotsByName(startCollect_dialog)
@@ -253,3 +273,6 @@ class Ui_startCollect_dialog(object):
         self.mintime_le.setText(_translate("startCollect_dialog", "10"))
         self.label_17.setText(_translate("startCollect_dialog", "最长绿灯时间"))
         self.maxtime_le.setText(_translate("startCollect_dialog", "30"))
+        self.low_rbtn.setText(_translate("startCollect_dialog", "下位机"))
+        self.bd_rbtn.setText(_translate("startCollect_dialog", "百度api"))
+        self.label_18.setText(_translate("startCollect_dialog", "数据来源"))
