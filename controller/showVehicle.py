@@ -6,6 +6,7 @@ from PyQt5.QtCore import QTimer
 import sys
 import random
 import time
+import numpy as np
 sys.path.append('../')
 from LowerMachine import UpperMachine
 
@@ -64,10 +65,23 @@ class win(QWidget): #创建一个类，为了集成控件
         time=datetime.datetime.now().strftime(
             '%Y-%m-%d %H:%M:%S'
         )
+        x = np.linspace(-2,-0.5,100)
+        y=np.zeros(x.shape)
+        plt.plot(x,y+0.5, '-k')
+        plt.plot(x,y-0.5, '-k')
+        plt.plot(y+0.5,x, '-k')
+        plt.plot(y-0.5,x, '-k')
+        x = np.linspace(0.5,2,100)
+        y=np.zeros(x.shape)
+        plt.plot(x,y+0.5, '-k')
+        plt.plot(x,y-0.5, '-k')
+        plt.plot(y+0.5,x, '-k')
+        plt.plot(y-0.5,x, '-k')
 
         self.plt.text(2.5, 2.5, time, size=12,ha="center", va="center",)
         self.plt.text(2.5, 3, '刷新频率：60hz', size=12,ha="center", va="center",)
 
+        self.plt.text(2.5, 2,'车流量'+str(self.nowcount) , size=18,ha="center", va="center",)
 
 
         self.plt.text(0, 2, "north", size=15, ha="center", va="center",bbox=dict(boxstyle="circle",ec=(1, 0.5, 0.5),fc=northColor,))
@@ -82,7 +96,7 @@ class win(QWidget): #创建一个类，为了集成控件
         self.lastcount=self.nowcount
 
     def change(self):
-       
+
 
 
         if(self.chang_count!=0):

@@ -55,10 +55,10 @@ font: 20pt &quot;宋体&quot;;</string>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>120</y>
-     <width>191</width>
-     <height>41</height>
+     <x>780</x>
+     <y>60</y>
+     <width>201</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -74,7 +74,7 @@ font: 16pt &quot;宋体&quot;;</string>
     <rect>
      <x>40</x>
      <y>240</y>
-     <width>681</width>
+     <width>941</width>
      <height>631</height>
     </rect>
    </property>
@@ -82,8 +82,8 @@ font: 16pt &quot;宋体&quot;;</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>180</y>
+     <x>170</x>
+     <y>190</y>
      <width>121</width>
      <height>61</height>
     </rect>
@@ -99,7 +99,7 @@ font: 14pt &quot;宋体&quot;;</string>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>740</x>
      <y>180</y>
      <width>121</width>
      <height>61</height>
@@ -154,6 +154,37 @@ font: 14pt &quot;宋体&quot;;</string>
    </property>
    <property name="displayFormat">
     <string notr="true">yyyy-M-d H:mm:ss</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>110</y>
+     <width>141</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 20pt &quot;宋体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>时间间隔</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="time_le">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>110</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 15pt &quot;宋体&quot;;</string>
    </property>
   </widget>
  </widget>
