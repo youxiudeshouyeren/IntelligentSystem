@@ -44,13 +44,10 @@ class StatisticalAnalysis_window(QDialog):
         id2 = self.child.dateTimeEdit_3.text()
         print(id2)
 
-        left=id1
-        right=id2
-        while left<right:
-            self.search_thread = StatisticalAnalysis_search_by_time_thread(left, right)
-            self.search_thread.start()
-            self.search_thread.sinOut.connect(self.table_data_flush)
-            left=left+self.interval
+        self.search_thread = StatisticalAnalysis_search_by_time_thread(self.interval,id1, id2)
+        self.search_thread.start()
+        self.search_thread.sinOut.connect(self.table_data_flush)
+
 
 
     # 刷新左边表格数据

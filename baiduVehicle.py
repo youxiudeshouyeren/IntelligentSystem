@@ -10,7 +10,6 @@ class StartShow():
     def __init__(self):
         pass
     # 返回ns_num南北车的数量，we_num东西车的数量
-    #ak=
     def get_status(self):
         url = "http://api.map.baidu.com/traffic/v1/road?road_name=顺城大街&city=成都市&ak=ewX4YgbE15522PhUgN4sQ9pO7KUq7FEX"
         data = {}
